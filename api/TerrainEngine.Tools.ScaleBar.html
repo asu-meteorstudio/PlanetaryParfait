@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ScaleBar
+   | Planetary Parfait </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ScaleBar
+   | Planetary Parfait ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TerrainEngine.Tools.ScaleBar">
+  
+  
+  <h1 id="TerrainEngine_Tools_ScaleBar" data-uid="TerrainEngine.Tools.ScaleBar" class="text-break">Class ScaleBar
+  </h1>
+  <div class="markdown level0 summary"><p>This script deals with generating the scale values used for each terrain dynamically for the scalebar tool.
+It functions by using a ScalebarPrefab, which is spawned into the scene and is scaled dynamically depending on the terrain&apos;s dimensions.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ScaleBar</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TerrainEngine.Tools.html">TerrainEngine.Tools</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="TerrainEngine_Tools_ScaleBar_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ScaleBar : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar__SampleTerrainsMenu" data-uid="TerrainEngine.Tools.ScaleBar._SampleTerrainsMenu">_SampleTerrainsMenu</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SampleTerrainsMenu _SampleTerrainsMenu</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SampleTerrainsMenu</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_bars" data-uid="TerrainEngine.Tools.ScaleBar.bars">bars</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ScaleBar.ScaleBarPrefab&gt; bars</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="TerrainEngine.Tools.ScaleBar.ScaleBarPrefab.html">ScaleBar.ScaleBarPrefab</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_controlCheck" data-uid="TerrainEngine.Tools.ScaleBar.controlCheck">controlCheck</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XRController controlCheck</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">XRController</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_heightTexture" data-uid="TerrainEngine.Tools.ScaleBar.heightTexture">heightTexture</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D heightTexture</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Texture2D</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_material" data-uid="TerrainEngine.Tools.ScaleBar.material">material</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material material</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Material</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_menuText" data-uid="TerrainEngine.Tools.ScaleBar.menuText">menuText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextMeshProUGUI menuText</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TextMeshProUGUI</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_scalebarMode" data-uid="TerrainEngine.Tools.ScaleBar.scalebarMode">scalebarMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool scalebarMode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_singleton" data-uid="TerrainEngine.Tools.ScaleBar.singleton">singleton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ScaleBar singleton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TerrainEngine.Tools.ScaleBar.html">ScaleBar</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_terrain" data-uid="TerrainEngine.Tools.ScaleBar.terrain">terrain</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject terrain</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="TerrainEngine_Tools_ScaleBar_valueToRoundTo" data-uid="TerrainEngine.Tools.ScaleBar.valueToRoundTo">valueToRoundTo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int valueToRoundTo</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="TerrainEngine_Tools_ScaleBar_CalculatePrefabs_" data-uid="TerrainEngine.Tools.ScaleBar.CalculatePrefabs*"></a>
+  <h4 id="TerrainEngine_Tools_ScaleBar_CalculatePrefabs_TerrainEngine_JMARSScene_" data-uid="TerrainEngine.Tools.ScaleBar.CalculatePrefabs(TerrainEngine.JMARSScene)">CalculatePrefabs(JMARSScene)</h4>
+  <div class="markdown level1 summary"><p>Calculates the 5 scalebar prefabs by finding the min, max, and in-between values.
+Sets these values to the scalebar&apos;s &quot;realWorldHeight&quot;, which is used to calculate the &quot;scale&quot; variable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CalculatePrefabs(JMARSScene scene)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TerrainEngine.JMARSScene.html">JMARSScene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="TerrainEngine_Tools_ScaleBar_CalculateRay_" data-uid="TerrainEngine.Tools.ScaleBar.CalculateRay*"></a>
+  <h4 id="TerrainEngine_Tools_ScaleBar_CalculateRay" data-uid="TerrainEngine.Tools.ScaleBar.CalculateRay">CalculateRay()</h4>
+  <div class="markdown level1 summary"><p>Creates raycast from user&apos;s mouse/controller to the terrain.
+Depending if intersecting with the terrain or not, run code for functionality</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CalculateRay()</code></pre>
+  </div>
+  
+  
+  <a id="TerrainEngine_Tools_ScaleBar_DeterminePlayerRay_" data-uid="TerrainEngine.Tools.ScaleBar.DeterminePlayerRay*"></a>
+  <h4 id="TerrainEngine_Tools_ScaleBar_DeterminePlayerRay" data-uid="TerrainEngine.Tools.ScaleBar.DeterminePlayerRay">DeterminePlayerRay()</h4>
+  <div class="markdown level1 summary"><p>Determines what type of raycast to use depending on what platform they are on (VR, Desktop)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeterminePlayerRay()</code></pre>
+  </div>
+  
+  
+  <a id="TerrainEngine_Tools_ScaleBar_ToggleScalebarMode_" data-uid="TerrainEngine.Tools.ScaleBar.ToggleScalebarMode*"></a>
+  <h4 id="TerrainEngine_Tools_ScaleBar_ToggleScalebarMode" data-uid="TerrainEngine.Tools.ScaleBar.ToggleScalebarMode">ToggleScalebarMode()</h4>
+  <div class="markdown level1 summary"><p>Toggles scalebar mode when user clicks UI button via desktop/VR</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleScalebarMode()</code></pre>
+  </div>
+  
+  
+  <a id="TerrainEngine_Tools_ScaleBar_UpdateLabelText_" data-uid="TerrainEngine.Tools.ScaleBar.UpdateLabelText*"></a>
+  <h4 id="TerrainEngine_Tools_ScaleBar_UpdateLabelText_TextMeshPro_" data-uid="TerrainEngine.Tools.ScaleBar.UpdateLabelText(TextMeshPro)">UpdateLabelText(TextMeshPro)</h4>
+  <div class="markdown level1 summary"><p>When a scalebar&apos;s label is changed, it updates the text on the Scalebar GameObject</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateLabelText(TextMeshPro text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TextMeshPro</span></td>
+        <td><span class="parametername">text</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Meteor Studio
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

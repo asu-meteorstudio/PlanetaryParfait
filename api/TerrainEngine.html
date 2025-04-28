@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace TerrainEngine
+   | Planetary Parfait </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace TerrainEngine
+   | Planetary Parfait ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TerrainEngine">
+  
+  <h1 id="TerrainEngine" data-uid="TerrainEngine" class="text-break">Namespace TerrainEngine
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="TerrainEngine.DataPackBehaviour.html">DataPackBehaviour</a></h4>
+      <section><p>When added onto a gameObject, it downloads data from a JMARSScene</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.html">JMARSScene</a></h4>
+      <section><p>///  A JMARS scene is a collection of terrain data, such as layer information, images, and depth-maps.
+**DO NOT ADD/REMOVE CODE FROM THIS SCRIPT. This is structured with the same format as the JSON code we get from JMARS</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.DataPack.html">JMARSScene.DataPack</a></h4>
+      <section><p>Used for sample terrains. This is how we load terrains offline by storing them locally </p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.Layer.html">JMARSScene.Layer</a></h4>
+      <section><p>Class that specifies a Layer object and pulls all layer data from the JSON </p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.Layer.LayerData.html">JMARSScene.Layer.LayerData</a></h4>
+      <section></section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.Layer.LayerData.TextData.html">JMARSScene.Layer.LayerData.TextData</a></h4>
+      <section><p>This class represents a single nomenclature object with its name and (x,z) coordinates on the terrain</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.Layer.TimeSliderData.html">JMARSScene.Layer.TimeSliderData</a></h4>
+      <section><p>**Not implemented</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.JMARSScene.Metadata.html">JMARSScene.Metadata</a></h4>
+      <section><p>Downloaded when a user logs into their JMARS account. Used to populate the custom terrains menu with the metadata variables in this class.</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.MaterialColorSetter.html">MaterialColorSetter</a></h4>
+      <section></section>
+      <h4><a class="xref" href="TerrainEngine.SceneDownloader.html">SceneDownloader</a></h4>
+      <section><p>LOAD-BEARING SCRIPT. Ran on start.</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.SceneMaterializer.html">SceneMaterializer</a></h4>
+      <section><p>LOAD-BEARING SCRIPT. Ran on start. This script will replace and alter the tiles to represent the scene the user is currently on.
+Definition: Scene - A scene is a collection of terrain data, such as layer information, images, and depth-maps.</p>
+</section>
+      <h4><a class="xref" href="TerrainEngine.TerrainColorTextureProvider.html">TerrainColorTextureProvider</a></h4>
+      <section></section>
+      <h4><a class="xref" href="TerrainEngine.TileMaker.html">TileMaker</a></h4>
+      <section></section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="TerrainEngine.SceneDownloader.SceneSession.html">SceneDownloader.SceneSession</a></h4>
+      <section><p>All states for the <code>SceneSession</code> state machine.</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Meteor Studio
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
