@@ -819,6 +819,28 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "resources/JMARS_Logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/JMARS_Logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/MeteorStudioLogo2018.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/MeteorStudioLogo2018.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "resources/Meteor_Horizontal_White.png",
       "output": {
         "resource": {
