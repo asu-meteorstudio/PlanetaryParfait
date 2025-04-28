@@ -1,3 +1,7 @@
+<div align="center">
+<img width="700" src="Documentation/resources/banner.png">
+<img width="600" src="Documentation/resources/Meteor_Horizontal_White.png">
+</div>
                          
 ## Overview
 Planetary Parfait is a collaborative VR platform for immersively viewing large geospatial datasets. The source data is planetary GIS data from the [Java Mission-planning and Analysis for Remote Sensing (JMARS)](https://jmars.asu.edu/) software tool which leverages public NASA databases.
