@@ -1,0 +1,16 @@
+apiRules:
+- include:
+    uidRegex: ^TerrainEngine
+    type: Namespace
+- include:
+    uidRegex: ^UserInterface
+    type: Namespace
+- include:
+    uidRegex: ^XRControls
+    type: Namespace
+- include:
+    uidRegex: ^Multiuser
+    type: Namespace
+- exclude:
+    uidRegex: .*
+    type: Namespace
