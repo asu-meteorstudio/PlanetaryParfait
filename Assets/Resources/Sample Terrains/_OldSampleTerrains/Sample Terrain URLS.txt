@@ -1,0 +1,5 @@
+ceres_sample_terrain: http://cm.mars.asu.edu/api/vr/viewScene.php?access_key=vrtest1mars.asu.edu_4f0824513a87a5522be5a466b0425d70
+mercury_sample_terrain: http://cm.mars.asu.edu/api/vr/viewScene.php?access_key=vrtest1mars.asu.edu_ececfcb5a30e21119ff237fcb8cbb924
+tycho_crater: http://cm.mars.asu.edu/api/vr/viewScene.php?access_key=vrtest1mars.asu.edu_c9291aa340af8507211842cb1b817eee
+valles_marineris: http://cm.mars.asu.edu/api/vr/viewScene.php?access_key=vrtest1mars.asu.edu_a8f82b83b36caa607887cadc49082806
+Gwash_RoV_2: http://cm.mars.asu.edu/api/vr/viewScene.php?access_key=vrtest1mars.asu.edu_ebccba6efb699fbc0936fb77f338a90c

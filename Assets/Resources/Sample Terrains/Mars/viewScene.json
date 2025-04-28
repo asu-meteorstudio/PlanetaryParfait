@@ -1,0 +1,182 @@
+{
+    "name": "Valles Marineris",
+    "body": "Mars",
+    "depth_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=depth_image.raw",
+    "exaggeration": "-0.002",
+    "dimension": "2306623.8669433575 x 947396.3520752148 x 6657.0",
+    "units": "m",
+    "depth_data_type": "short",
+    "thumbnail_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=thumbnail_image.jpg",
+    "starting_point": "0,0",
+    "proj_center_lat": "0.0",
+    "proj_center_lon": "180.0",
+    "scene_center_lat": "-10.093750000000005",
+    "scene_center_lon": "71.00000000000001",
+    "top_left": "269.5, -2.0625000000000058",
+    "top_right": "308.53125, -2.0625000000000058",
+    "bottom_left": "269.5, -18.093750000000007",
+    "bottom_right": "308.53125, -18.093750000000007",
+    "last_mod_date": "2024-06-25 10:18:06.19265",
+    "last_accessed_date": null,
+    "layers": [
+        {
+            "layer_name": "Nomenclature",
+            "graphic_img": "",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2780",
+            "layer_data": [
+                {
+                    "numeric_flag": "false",
+                    "numeric_data_img": "",
+                    "data_type": null,
+                    "text_data": [
+                        {
+                            "name": "Arima",
+                            "x": 3433.3056000000015,
+                            "y": 1763.8143999999988
+                        },
+                        {
+                            "name": "Avan",
+                            "x": 2653.5424000000003,
+                            "y": 1140.4544000000003
+                        },
+                        {
+                            "name": "Bronkhorst",
+                            "x": 4517.644800000002,
+                            "y": 1106.0607999999993
+                        },
+                        {
+                            "name": "Culter",
+                            "x": 4680.447999999997,
+                            "y": 867.8783999999985
+                        },
+                        {
+                            "name": "Dogana",
+                            "x": 4714.777599999999,
+                            "y": 1017.3439999999975
+                        },
+                        {
+                            "name": "Elorza",
+                            "x": 4517.299200000001,
+                            "y": 857.1775999999993
+                        },
+                        {
+                            "name": "Garni",
+                            "x": 2663.7823999999982,
+                            "y": 1210.0095999999987
+                        },
+                        {
+                            "name": "Kankossa",
+                            "x": 4474.879999999997,
+                            "y": 1250.2400000000002
+                        },
+                        {
+                            "name": "Perrotin",
+                            "x": 1608,
+                            "y": 97.20319999999958
+                        },
+                        {
+                            "name": "Pital",
+                            "x": 3611.5455999999995,
+                            "y": 922.5215999999991
+                        },
+                        {
+                            "name": "Saravan",
+                            "x": 4669.491199999995,
+                            "y": 1902.899199999999
+                        },
+                        {
+                            "name": "Sibiti",
+                            "x": 3231.1551999999992,
+                            "y": 1319.4367999999984
+                        },
+                        {
+                            "name": "Wallula",
+                            "x": 4621.350400000005,
+                            "y": 1006.0415999999989
+                        }
+                    ],
+                    "source_units": null,
+                    "source_name": null,
+                    "layer_data_key": "957"
+                }
+            ]
+        },
+        {
+            "layer_name": "Explore_Mars",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=layer_1.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2781"
+        },
+        {
+            "layer_name": "Color_Map",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=layer_2.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2782"
+        },
+        {
+            "layer_name": "Colorized_Elevation",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=layer_3.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2783",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=data_layer_3_1.raw",
+                    "data_type": "short",
+                    "text_data": null,
+                    "source_units": "m",
+                    "source_name": "MOLA 128ppd Elevation",
+                    "layer_data_key": "958"
+                }
+            ]
+        },
+        {
+            "layer_name": "Daytime_Temperature",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=layer_4.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2784"
+        },
+        {
+            "layer_name": "Nighttime_Temperature",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=layer_5.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2785",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=data_layer_5_1.raw",
+                    "data_type": "byte",
+                    "text_data": null,
+                    "source_units": null,
+                    "source_name": "THEMIS Night IR 100m Global Mosaic (v14.0)",
+                    "layer_data_key": "959"
+                }
+            ]
+        },
+        {
+            "layer_name": "Thermal_Inertia",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=layer_6.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2786",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_bca6e0db7cc584465c18c467fab57e07&name=data_layer_6_1.raw",
+                    "data_type": "int",
+                    "text_data": null,
+                    "source_units": "J m-2 K-1 sec-1/2",
+                    "source_name": "TES Thermal Inertia (Christensen) - Numeric",
+                    "layer_data_key": "960"
+                }
+            ]
+        }
+    ]
+}

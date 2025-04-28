@@ -1,0 +1,147 @@
+{
+    "name": "valles_sample_terrain",
+    "body": "Mars",
+    "depth_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=depth_image.raw",
+    "exaggeration": "-0.004",
+    "dimension": "1769211.9011463074 x 1023114.1891806407 x 12557.0",
+    "units": "m",
+    "depth_data_type": "short",
+    "thumbnail_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=thumbnail_image.jpg",
+    "starting_point": "0,0",
+    "proj_center_lat": "0.0",
+    "proj_center_lon": "180.0",
+    "scene_center_lat": "-7.562500000000004",
+    "scene_center_lon": "70.84375",
+    "top_left": null,
+    "top_right": null,
+    "bottom_left": null,
+    "bottom_right": null,
+    "last_mod_date": "2023-10-23 10:07:16.25908",
+    "last_accessed_date": null,
+    "layers": [
+        {
+            "layer_name": "Nomenclature",
+            "graphic_img": "",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2157",
+            "layer_data": [
+                {
+                    "numeric_flag": "false",
+                    "numeric_data_img": "",
+                    "data_type": null,
+                    "text_data": [
+                        {
+                            "name": "Arima",
+                            "x": 708.3264000000004,
+                            "y": 541.9535999999997
+                        },
+                        {
+                            "name": "Avan",
+                            "x": 513.3856000000001,
+                            "y": 386.1136000000001
+                        },
+                        {
+                            "name": "Garni",
+                            "x": 515.9455999999996,
+                            "y": 403.5023999999997
+                        },
+                        {
+                            "name": "Perrotin",
+                            "x": 252,
+                            "y": 125.3007999999999
+                        },
+                        {
+                            "name": "Pital",
+                            "x": 752.8863999999999,
+                            "y": 331.6303999999998
+                        },
+                        {
+                            "name": "Sibiti",
+                            "x": 657.7887999999998,
+                            "y": 430.8591999999996
+                        }
+                    ],
+                    "source_units": null,
+                    "source_name": null,
+                    "layer_data_key": "813"
+                }
+            ]
+        },
+        {
+            "layer_name": "Explore_Mars",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=layer_1.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2158"
+        },
+        {
+            "layer_name": "Color_Map",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=layer_2.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2159"
+        },
+        {
+            "layer_name": "Colorized_Elevation",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=layer_3.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2160",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=data_layer_3_1.raw",
+                    "data_type": "short",
+                    "text_data": null,
+                    "source_units": "m",
+                    "source_name": "MOLA 128ppd Elevation",
+                    "layer_data_key": "814"
+                }
+            ]
+        },
+        {
+            "layer_name": "Daytime_Temperature",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=layer_4.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2161"
+        },
+        {
+            "layer_name": "Nighttime_Temperature",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=layer_5.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2162",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=data_layer_5_1.raw",
+                    "data_type": "byte",
+                    "text_data": null,
+                    "source_units": null,
+                    "source_name": "THEMIS Night IR 100m Global Mosaic (v14.0)",
+                    "layer_data_key": "815"
+                }
+            ]
+        },
+        {
+            "layer_name": "Thermal_Inertia",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=layer_6.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2163",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_60eb235dade4a3064cb87ce47a6017e2&name=data_layer_6_1.raw",
+                    "data_type": "int",
+                    "text_data": null,
+                    "source_units": "J m-2 K-1 sec-1/2",
+                    "source_name": "TES Thermal Inertia (Christensen) - Numeric",
+                    "layer_data_key": "816"
+                }
+            ]
+        }
+    ]
+}

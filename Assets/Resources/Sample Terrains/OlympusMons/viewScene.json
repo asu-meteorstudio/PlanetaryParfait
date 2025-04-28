@@ -1,0 +1,127 @@
+{
+    "name": "Olympus Mons",
+    "body": "Mars",
+    "depth_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=depth_image.raw",
+    "exaggeration": "-0.004121162",
+    "dimension": "1153311.9334716785 x 662069.3805437903 x 24265.0",
+    "units": "m",
+    "depth_data_type": "short",
+    "thumbnail_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=thumbnail_image.jpg",
+    "starting_point": "0,0",
+    "proj_center_lat": "0.0",
+    "proj_center_lon": "180.0",
+    "scene_center_lat": "18.4375",
+    "scene_center_lon": "133.81249999999997",
+    "top_left": "216.4375, 24.046875",
+    "top_right": "235.953125, 24.046875",
+    "bottom_left": "216.4375, 12.84375",
+    "bottom_right": "235.953125, 12.84375",
+    "last_mod_date": "2024-07-03 14:36:38.69354",
+    "last_accessed_date": null,
+    "layers": [
+        {
+            "layer_name": "Nomenclature",
+            "graphic_img": "",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2806",
+            "layer_data": [
+                {
+                    "numeric_flag": "false",
+                    "numeric_data_img": "",
+                    "data_type": null,
+                    "text_data": [
+                        {
+                            "name": "Karzok",
+                            "x": 3027.302399999997,
+                            "y": 1444.7040000000034
+                        },
+                        {
+                            "name": "Pangboche",
+                            "x": 2600.5503999999983,
+                            "y": 1732.7296000000024
+                        }
+                    ],
+                    "source_units": null,
+                    "source_name": null,
+                    "layer_data_key": "969"
+                }
+            ]
+        },
+        {
+            "layer_name": "Olympus_Mons_(DAY_IR)",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=layer_1.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2807",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=data_layer_1_1.raw",
+                    "data_type": "byte",
+                    "text_data": null,
+                    "source_units": null,
+                    "source_name": "Olympus Mons (DAY IR)",
+                    "layer_data_key": "970"
+                }
+            ]
+        },
+        {
+            "layer_name": "Explore_Mars",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=layer_2.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2808"
+        },
+        {
+            "layer_name": "Color_Map",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=layer_3.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2809"
+        },
+        {
+            "layer_name": "Colorized_Elevation",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=layer_4.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2810",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=data_layer_4_1.raw",
+                    "data_type": "short",
+                    "text_data": null,
+                    "source_units": "m",
+                    "source_name": "MOLA 128ppd Elevation",
+                    "layer_data_key": "971"
+                }
+            ]
+        },
+        {
+            "layer_name": "Daytime_Temperature",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=layer_5.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2811"
+        },
+        {
+            "layer_name": "Nighttime_Temperature",
+            "graphic_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=layer_6.png",
+            "global_flag": "false",
+            "toggle_state": "true",
+            "layer_key": "2812",
+            "layer_data": [
+                {
+                    "numeric_flag": "true",
+                    "numeric_data_img": "https://cm.mars.asu.edu/api/vr/getSceneImage.php?access_key=vr-demo_7f2413d1958a9a45ed22f3a1781d8e67&name=data_layer_6_1.raw",
+                    "data_type": "byte",
+                    "text_data": null,
+                    "source_units": null,
+                    "source_name": "THEMIS Night IR 100m Global Mosaic (v14.0)",
+                    "layer_data_key": "972"
+                }
+            ]
+        }
+    ]
+}
