@@ -200,7 +200,8 @@ namespace TerrainEngine
             yield return webRequest.SendWebRequest();
             _viewSceneJson = downloadHandlerBuffer.text;
             var currentScene = JsonConvert.DeserializeObject<JMARSScene>(_viewSceneJson);
-            
+            // DEBUG: Print the url used for the terrain! 
+            Debug.Log(terrainURL);
             //rawDataLocation = currentScene.depth_img.Replace(".tif", ".raw");
 
             //Gets image resolution
