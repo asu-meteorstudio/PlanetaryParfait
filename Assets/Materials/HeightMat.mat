@@ -43,12 +43,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _length: 513
+    - _length: 748
     - _numTiles: 30
     - _offset: 0
     - _scaleFactor: 0.0000040000004
     - _scaleFactor2: 1
-    - _width: 1196
+    - _width: 1383
     m_Colors:
     - _uv_max: {r: 0.5, g: 1, b: 0, a: 0}
     - _uv_min: {r: 0, g: 0, b: 0, a: 0}

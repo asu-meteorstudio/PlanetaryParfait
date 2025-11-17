@@ -16,19 +16,29 @@ namespace TerrainEngine
     [Serializable]
     public class JMARSScene
     {
-        public string name; // JMARS Scene name 
+       public string name; // JMARS Scene name 
         public string body; // planet the terrain is from
         public string depth_img; // URL for the raw file (raw file: contains the height data for each pixel on the terrain map. Cannot parse through RAW file since we cant open it)
-        public int index; // ** What does this mean???
+        public int index; // What does this mean?!?!
         public Texture2D depthTexture; // after converting the RAW file to texture2D, this refers to the converted Texture2D object
-        public RenderTexture layersTexture; // ** What does this mean??? 
-        public string thumbnail_img; // the URL to the thumbnail we show on the terrain select button
-        public Texture2D thumbnail_texture; // after converting thumbnail_img PNG file to texture2D, this refers to the converted Texture2D object
         public string exaggeration; // the exaggeration, which is converted to a float so we can use it
         public string dimension; // length*width*height (parsed by x)
         public string units; // meters, km, etc
         public string depth_data_type; // float, byte data
+        public string thumbnail_img; // the URL to the thumbnail we show on the terrain select button
+        public Texture2D thumbnail_texture; // after converting thumbnail_img PNG file to texture2D, this refers to the converted Texture2D object
         public string starting_point; // ** What does this mean???
+        // Latitude and Longitude of the center of the Oblique Cylindrical Projection
+        public string proj_center_lat;
+        public string proj_center_lon;
+        // Latitude and longitude of the center of the scene
+        public string scene_center_lat;
+        public string scene_center_lon;
+        // Latitude and longitude of the corners of the scene
+        public string top_left;
+        public string top_right;
+        public string bottom_left;
+        public string bottom_right;
         public string last_mod_date; // **Not implemented. Represents the last time that the JMARS Scene was modified. Want to use for custom terrain query
         public string last_accessed_date; // **Not implemented. Represents the last time that the JMARS Scene was accessed. Want to use for custom terrain query
         public float heightOffset; // highest value in the heightmap 
