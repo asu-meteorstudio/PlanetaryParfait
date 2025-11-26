@@ -130,12 +130,31 @@ references:
   isSpec: "True"
   fullName: Multiuser.MultiplayerManager.JoinRelay
   nameWithType: MultiplayerManager.JoinRelay
+- uid: Multiuser.MultiplayerManager.LeaveRelay
+  name: LeaveRelay()
+  href: api/Multiuser.MultiplayerManager.html#Multiuser_MultiplayerManager_LeaveRelay
+  commentId: M:Multiuser.MultiplayerManager.LeaveRelay
+  fullName: Multiuser.MultiplayerManager.LeaveRelay()
+  nameWithType: MultiplayerManager.LeaveRelay()
+- uid: Multiuser.MultiplayerManager.LeaveRelay*
+  name: LeaveRelay
+  href: api/Multiuser.MultiplayerManager.html#Multiuser_MultiplayerManager_LeaveRelay_
+  commentId: Overload:Multiuser.MultiplayerManager.LeaveRelay
+  isSpec: "True"
+  fullName: Multiuser.MultiplayerManager.LeaveRelay
+  nameWithType: MultiplayerManager.LeaveRelay
 - uid: Multiuser.MultiplayerManager.playerName
   name: playerName
   href: api/Multiuser.MultiplayerManager.html#Multiuser_MultiplayerManager_playerName
   commentId: F:Multiuser.MultiplayerManager.playerName
   fullName: Multiuser.MultiplayerManager.playerName
   nameWithType: MultiplayerManager.playerName
+- uid: Multiuser.MultiplayerManager.voiceChat
+  name: voiceChat
+  href: api/Multiuser.MultiplayerManager.html#Multiuser_MultiplayerManager_voiceChat
+  commentId: F:Multiuser.MultiplayerManager.voiceChat
+  fullName: Multiuser.MultiplayerManager.voiceChat
+  nameWithType: MultiplayerManager.voiceChat
 - uid: Multiuser.Sync
   name: Multiuser.Sync
   href: api/Multiuser.Sync.html
@@ -2466,6 +2485,12 @@ references:
   commentId: F:UserInterface.LoadingBar.Abort
   fullName: UserInterface.LoadingBar.Abort
   nameWithType: LoadingBar.Abort
+- uid: UserInterface.LoadingBar.buttonClick
+  name: buttonClick
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_buttonClick
+  commentId: F:UserInterface.LoadingBar.buttonClick
+  fullName: UserInterface.LoadingBar.buttonClick
+  nameWithType: LoadingBar.buttonClick
 - uid: UserInterface.LoadingBar.DoneLoading
   name: DoneLoading
   href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_DoneLoading
@@ -2516,6 +2541,12 @@ references:
   commentId: F:UserInterface.LoadingBar.loadingPercent
   fullName: UserInterface.LoadingBar.loadingPercent
   nameWithType: LoadingBar.loadingPercent
+- uid: UserInterface.LoadingBar.loadingSound
+  name: loadingSound
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_loadingSound
+  commentId: F:UserInterface.LoadingBar.loadingSound
+  fullName: UserInterface.LoadingBar.loadingSound
+  nameWithType: LoadingBar.loadingSound
 - uid: UserInterface.LoadingBar.loadingText
   name: loadingText
   href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_loadingText
@@ -2567,6 +2598,12 @@ references:
   commentId: T:UserInterface.Login
   fullName: UserInterface.Login
   nameWithType: Login
+- uid: UserInterface.Login.buttonClick
+  name: buttonClick
+  href: api/UserInterface.Login.html#UserInterface_Login_buttonClick
+  commentId: F:UserInterface.Login.buttonClick
+  fullName: UserInterface.Login.buttonClick
+  nameWithType: Login.buttonClick
 - uid: UserInterface.Login.FailedLogin
   name: FailedLogin
   href: api/UserInterface.Login.html#UserInterface_Login_FailedLogin
@@ -2679,6 +2716,12 @@ references:
   commentId: T:UserInterface.MainMenu
   fullName: UserInterface.MainMenu
   nameWithType: MainMenu
+- uid: UserInterface.MainMenu.buttonClick
+  name: buttonClick
+  href: api/UserInterface.MainMenu.html#UserInterface_MainMenu_buttonClick
+  commentId: F:UserInterface.MainMenu.buttonClick
+  fullName: UserInterface.MainMenu.buttonClick
+  nameWithType: MainMenu.buttonClick
 - uid: UserInterface.MainMenu.CloseAllMenus
   name: CloseAllMenus()
   href: api/UserInterface.MainMenu.html#UserInterface_MainMenu_CloseAllMenus
@@ -2917,6 +2960,12 @@ references:
   commentId: F:UserInterface.MultiuserMenu.bottomButton
   fullName: UserInterface.MultiuserMenu.bottomButton
   nameWithType: MultiuserMenu.bottomButton
+- uid: UserInterface.MultiuserMenu.buttonClick
+  name: buttonClick
+  href: api/UserInterface.MultiuserMenu.html#UserInterface_MultiuserMenu_buttonClick
+  commentId: F:UserInterface.MultiuserMenu.buttonClick
+  fullName: UserInterface.MultiuserMenu.buttonClick
+  nameWithType: MultiuserMenu.buttonClick
 - uid: UserInterface.MultiuserMenu.buttonHeader
   name: buttonHeader
   href: api/UserInterface.MultiuserMenu.html#UserInterface_MultiuserMenu_buttonHeader
@@ -3128,6 +3177,12 @@ references:
   commentId: T:UserInterface.SampleTerrainsMenu
   fullName: UserInterface.SampleTerrainsMenu
   nameWithType: SampleTerrainsMenu
+- uid: UserInterface.SampleTerrainsMenu.buttonClick
+  name: buttonClick
+  href: api/UserInterface.SampleTerrainsMenu.html#UserInterface_SampleTerrainsMenu_buttonClick
+  commentId: F:UserInterface.SampleTerrainsMenu.buttonClick
+  fullName: UserInterface.SampleTerrainsMenu.buttonClick
+  nameWithType: SampleTerrainsMenu.buttonClick
 - uid: UserInterface.SampleTerrainsMenu.exitToGameButton
   name: exitToGameButton
   href: api/UserInterface.SampleTerrainsMenu.html#UserInterface_SampleTerrainsMenu_exitToGameButton
@@ -3197,6 +3252,12 @@ references:
   commentId: T:UserInterface.SettingsController
   fullName: UserInterface.SettingsController
   nameWithType: SettingsController
+- uid: UserInterface.SettingsController.buttonClick
+  name: buttonClick
+  href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_buttonClick
+  commentId: F:UserInterface.SettingsController.buttonClick
+  fullName: UserInterface.SettingsController.buttonClick
+  nameWithType: SettingsController.buttonClick
 - uid: UserInterface.SettingsController.exitButton
   name: exitButton
   href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_exitButton
@@ -3369,6 +3430,12 @@ references:
   commentId: F:UserInterface.TerrainMenu.backToMenuButton
   fullName: UserInterface.TerrainMenu.backToMenuButton
   nameWithType: TerrainMenu.backToMenuButton
+- uid: UserInterface.TerrainMenu.buttonClick
+  name: buttonClick
+  href: api/UserInterface.TerrainMenu.html#UserInterface_TerrainMenu_buttonClick
+  commentId: F:UserInterface.TerrainMenu.buttonClick
+  fullName: UserInterface.TerrainMenu.buttonClick
+  nameWithType: TerrainMenu.buttonClick
 - uid: UserInterface.TerrainMenu.ExagParent
   name: ExagParent
   href: api/UserInterface.TerrainMenu.html#UserInterface_TerrainMenu_ExagParent
@@ -3487,6 +3554,12 @@ references:
   commentId: T:UserInterface.TerrainTools
   fullName: UserInterface.TerrainTools
   nameWithType: TerrainTools
+- uid: UserInterface.TerrainTools.buttonClick
+  name: buttonClick
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_buttonClick
+  commentId: F:UserInterface.TerrainTools.buttonClick
+  fullName: UserInterface.TerrainTools.buttonClick
+  nameWithType: TerrainTools.buttonClick
 - uid: UserInterface.TerrainTools.clearAllPins
   name: clearAllPins
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_clearAllPins
