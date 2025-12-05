@@ -3578,6 +3578,60 @@ references:
   commentId: F:UserInterface.TerrainTools.colorPickerPanel
   fullName: UserInterface.TerrainTools.colorPickerPanel
   nameWithType: TerrainTools.colorPickerPanel
+- uid: UserInterface.TerrainTools.desktopHelp
+  name: desktopHelp
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopHelp
+  commentId: F:UserInterface.TerrainTools.desktopHelp
+  fullName: UserInterface.TerrainTools.desktopHelp
+  nameWithType: TerrainTools.desktopHelp
+- uid: UserInterface.TerrainTools.desktopLayers
+  name: desktopLayers
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopLayers
+  commentId: F:UserInterface.TerrainTools.desktopLayers
+  fullName: UserInterface.TerrainTools.desktopLayers
+  nameWithType: TerrainTools.desktopLayers
+- uid: UserInterface.TerrainTools.desktopMultiuser
+  name: desktopMultiuser
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopMultiuser
+  commentId: F:UserInterface.TerrainTools.desktopMultiuser
+  fullName: UserInterface.TerrainTools.desktopMultiuser
+  nameWithType: TerrainTools.desktopMultiuser
+- uid: UserInterface.TerrainTools.desktopPP
+  name: desktopPP
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopPP
+  commentId: F:UserInterface.TerrainTools.desktopPP
+  fullName: UserInterface.TerrainTools.desktopPP
+  nameWithType: TerrainTools.desktopPP
+- uid: UserInterface.TerrainTools.desktopReset
+  name: desktopReset
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopReset
+  commentId: F:UserInterface.TerrainTools.desktopReset
+  fullName: UserInterface.TerrainTools.desktopReset
+  nameWithType: TerrainTools.desktopReset
+- uid: UserInterface.TerrainTools.desktopScalebar
+  name: desktopScalebar
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopScalebar
+  commentId: F:UserInterface.TerrainTools.desktopScalebar
+  fullName: UserInterface.TerrainTools.desktopScalebar
+  nameWithType: TerrainTools.desktopScalebar
+- uid: UserInterface.TerrainTools.desktopSettings
+  name: desktopSettings
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopSettings
+  commentId: F:UserInterface.TerrainTools.desktopSettings
+  fullName: UserInterface.TerrainTools.desktopSettings
+  nameWithType: TerrainTools.desktopSettings
+- uid: UserInterface.TerrainTools.desktopTerrains
+  name: desktopTerrains
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopTerrains
+  commentId: F:UserInterface.TerrainTools.desktopTerrains
+  fullName: UserInterface.TerrainTools.desktopTerrains
+  nameWithType: TerrainTools.desktopTerrains
+- uid: UserInterface.TerrainTools.desktopTools
+  name: desktopTools
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_desktopTools
+  commentId: F:UserInterface.TerrainTools.desktopTools
+  fullName: UserInterface.TerrainTools.desktopTools
+  nameWithType: TerrainTools.desktopTools
 - uid: UserInterface.TerrainTools.DynamicReadout
   name: DynamicReadout
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_DynamicReadout
@@ -3603,12 +3657,6 @@ references:
   commentId: F:UserInterface.TerrainTools.generalTip
   fullName: UserInterface.TerrainTools.generalTip
   nameWithType: TerrainTools.generalTip
-- uid: UserInterface.TerrainTools.helpButton
-  name: helpButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_helpButton
-  commentId: F:UserInterface.TerrainTools.helpButton
-  fullName: UserInterface.TerrainTools.helpButton
-  nameWithType: TerrainTools.helpButton
 - uid: UserInterface.TerrainTools.highlightColor
   name: highlightColor
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_highlightColor
@@ -3628,24 +3676,12 @@ references:
   isSpec: "True"
   fullName: UserInterface.TerrainTools.Instance
   nameWithType: TerrainTools.Instance
-- uid: UserInterface.TerrainTools.layersButton
-  name: layersButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_layersButton
-  commentId: F:UserInterface.TerrainTools.layersButton
-  fullName: UserInterface.TerrainTools.layersButton
-  nameWithType: TerrainTools.layersButton
 - uid: UserInterface.TerrainTools.leftSideTools
   name: leftSideTools
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_leftSideTools
   commentId: F:UserInterface.TerrainTools.leftSideTools
   fullName: UserInterface.TerrainTools.leftSideTools
   nameWithType: TerrainTools.leftSideTools
-- uid: UserInterface.TerrainTools.multiplayerButton
-  name: multiplayerButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_multiplayerButton
-  commentId: F:UserInterface.TerrainTools.multiplayerButton
-  fullName: UserInterface.TerrainTools.multiplayerButton
-  nameWithType: TerrainTools.multiplayerButton
 - uid: UserInterface.TerrainTools.OpenMenu
   name: OpenMenu
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_OpenMenu
@@ -3659,12 +3695,6 @@ references:
   isSpec: "True"
   fullName: UserInterface.TerrainTools.OpenMenu
   nameWithType: TerrainTools.OpenMenu
-- uid: UserInterface.TerrainTools.perPixelButton
-  name: perPixelButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_perPixelButton
-  commentId: F:UserInterface.TerrainTools.perPixelButton
-  fullName: UserInterface.TerrainTools.perPixelButton
-  nameWithType: TerrainTools.perPixelButton
 - uid: UserInterface.TerrainTools.perPixelData
   name: perPixelData
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_perPixelData
@@ -3683,12 +3713,6 @@ references:
   commentId: F:UserInterface.TerrainTools.perPixelPanel
   fullName: UserInterface.TerrainTools.perPixelPanel
   nameWithType: TerrainTools.perPixelPanel
-- uid: UserInterface.TerrainTools.resetPosition
-  name: resetPosition
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_resetPosition
-  commentId: F:UserInterface.TerrainTools.resetPosition
-  fullName: UserInterface.TerrainTools.resetPosition
-  nameWithType: TerrainTools.resetPosition
 - uid: UserInterface.TerrainTools.roomCodePanel
   name: roomCodePanel
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_roomCodePanel
@@ -3701,12 +3725,6 @@ references:
   commentId: F:UserInterface.TerrainTools.roomCodeText
   fullName: UserInterface.TerrainTools.roomCodeText
   nameWithType: TerrainTools.roomCodeText
-- uid: UserInterface.TerrainTools.scaleBarButton
-  name: scaleBarButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_scaleBarButton
-  commentId: F:UserInterface.TerrainTools.scaleBarButton
-  fullName: UserInterface.TerrainTools.scaleBarButton
-  nameWithType: TerrainTools.scaleBarButton
 - uid: UserInterface.TerrainTools.scaleBarPanel
   name: scaleBarPanel
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_scaleBarPanel
@@ -3752,12 +3770,6 @@ references:
   isSpec: "True"
   fullName: UserInterface.TerrainTools.SetRoomCode
   nameWithType: TerrainTools.SetRoomCode
-- uid: UserInterface.TerrainTools.settingButton
-  name: settingButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_settingButton
-  commentId: F:UserInterface.TerrainTools.settingButton
-  fullName: UserInterface.TerrainTools.settingButton
-  nameWithType: TerrainTools.settingButton
 - uid: UserInterface.TerrainTools.shiftImg
   name: shiftImg
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_shiftImg
@@ -3776,12 +3788,6 @@ references:
   commentId: F:UserInterface.TerrainTools.terrainLayers
   fullName: UserInterface.TerrainTools.terrainLayers
   nameWithType: TerrainTools.terrainLayers
-- uid: UserInterface.TerrainTools.terrainMenuButton
-  name: terrainMenuButton
-  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_terrainMenuButton
-  commentId: F:UserInterface.TerrainTools.terrainMenuButton
-  fullName: UserInterface.TerrainTools.terrainMenuButton
-  nameWithType: TerrainTools.terrainMenuButton
 - uid: UserInterface.TerrainTools.ToggleMenu(System.Boolean)
   name: ToggleMenu(Boolean)
   href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_ToggleMenu_System_Boolean_
@@ -3834,6 +3840,60 @@ references:
   isSpec: "True"
   fullName: UserInterface.TerrainTools.TutorialActive
   nameWithType: TerrainTools.TutorialActive
+- uid: UserInterface.TerrainTools.vrHelp
+  name: vrHelp
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrHelp
+  commentId: F:UserInterface.TerrainTools.vrHelp
+  fullName: UserInterface.TerrainTools.vrHelp
+  nameWithType: TerrainTools.vrHelp
+- uid: UserInterface.TerrainTools.vrLayers
+  name: vrLayers
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrLayers
+  commentId: F:UserInterface.TerrainTools.vrLayers
+  fullName: UserInterface.TerrainTools.vrLayers
+  nameWithType: TerrainTools.vrLayers
+- uid: UserInterface.TerrainTools.vrMultiuser
+  name: vrMultiuser
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrMultiuser
+  commentId: F:UserInterface.TerrainTools.vrMultiuser
+  fullName: UserInterface.TerrainTools.vrMultiuser
+  nameWithType: TerrainTools.vrMultiuser
+- uid: UserInterface.TerrainTools.vrPP
+  name: vrPP
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrPP
+  commentId: F:UserInterface.TerrainTools.vrPP
+  fullName: UserInterface.TerrainTools.vrPP
+  nameWithType: TerrainTools.vrPP
+- uid: UserInterface.TerrainTools.vrReset
+  name: vrReset
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrReset
+  commentId: F:UserInterface.TerrainTools.vrReset
+  fullName: UserInterface.TerrainTools.vrReset
+  nameWithType: TerrainTools.vrReset
+- uid: UserInterface.TerrainTools.vrScalebar
+  name: vrScalebar
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrScalebar
+  commentId: F:UserInterface.TerrainTools.vrScalebar
+  fullName: UserInterface.TerrainTools.vrScalebar
+  nameWithType: TerrainTools.vrScalebar
+- uid: UserInterface.TerrainTools.vrSettings
+  name: vrSettings
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrSettings
+  commentId: F:UserInterface.TerrainTools.vrSettings
+  fullName: UserInterface.TerrainTools.vrSettings
+  nameWithType: TerrainTools.vrSettings
+- uid: UserInterface.TerrainTools.vrTerrains
+  name: vrTerrains
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrTerrains
+  commentId: F:UserInterface.TerrainTools.vrTerrains
+  fullName: UserInterface.TerrainTools.vrTerrains
+  nameWithType: TerrainTools.vrTerrains
+- uid: UserInterface.TerrainTools.vrTools
+  name: vrTools
+  href: api/UserInterface.TerrainTools.html#UserInterface_TerrainTools_vrTools
+  commentId: F:UserInterface.TerrainTools.vrTools
+  fullName: UserInterface.TerrainTools.vrTools
+  nameWithType: TerrainTools.vrTools
 - uid: XRControls
   name: XRControls
   href: api/XRControls.html
@@ -4200,18 +4260,18 @@ references:
   commentId: F:XRControls.XRController.bActive
   fullName: XRControls.XRController.bActive
   nameWithType: XRController.bActive
+- uid: XRControls.XRController.buttonHints
+  name: buttonHints
+  href: api/XRControls.XRController.html#XRControls_XRController_buttonHints
+  commentId: F:XRControls.XRController.buttonHints
+  fullName: XRControls.XRController.buttonHints
+  nameWithType: XRController.buttonHints
 - uid: XRControls.XRController.controls
   name: controls
   href: api/XRControls.XRController.html#XRControls_XRController_controls
   commentId: F:XRControls.XRController.controls
   fullName: XRControls.XRController.controls
   nameWithType: XRController.controls
-- uid: XRControls.XRController.gripActive
-  name: gripActive
-  href: api/XRControls.XRController.html#XRControls_XRController_gripActive
-  commentId: F:XRControls.XRController.gripActive
-  fullName: XRControls.XRController.gripActive
-  nameWithType: XRController.gripActive
 - uid: XRControls.XRController.hovering
   name: hovering
   href: api/XRControls.XRController.html#XRControls_XRController_hovering
@@ -4237,12 +4297,18 @@ references:
   commentId: F:XRControls.XRController.joystickActive
   fullName: XRControls.XRController.joystickActive
   nameWithType: XRController.joystickActive
-- uid: XRControls.XRController.leftHandActive
-  name: leftHandActive
-  href: api/XRControls.XRController.html#XRControls_XRController_leftHandActive
-  commentId: F:XRControls.XRController.leftHandActive
-  fullName: XRControls.XRController.leftHandActive
-  nameWithType: XRController.leftHandActive
+- uid: XRControls.XRController.leftController
+  name: leftController
+  href: api/XRControls.XRController.html#XRControls_XRController_leftController
+  commentId: F:XRControls.XRController.leftController
+  fullName: XRControls.XRController.leftController
+  nameWithType: XRController.leftController
+- uid: XRControls.XRController.leftGripActive
+  name: leftGripActive
+  href: api/XRControls.XRController.html#XRControls_XRController_leftGripActive
+  commentId: F:XRControls.XRController.leftGripActive
+  fullName: XRControls.XRController.leftGripActive
+  nameWithType: XRController.leftGripActive
 - uid: XRControls.XRController.OnA(InputAction.CallbackContext)
   name: OnA(InputAction.CallbackContext)
   href: api/XRControls.XRController.html#XRControls_XRController_OnA_InputAction_CallbackContext_
@@ -4477,12 +4543,36 @@ references:
   isSpec: "True"
   fullName: XRControls.XRController.OnY
   nameWithType: XRController.OnY
+- uid: XRControls.XRController.platformButtonHints
+  name: platformButtonHints
+  href: api/XRControls.XRController.html#XRControls_XRController_platformButtonHints
+  commentId: F:XRControls.XRController.platformButtonHints
+  fullName: XRControls.XRController.platformButtonHints
+  nameWithType: XRController.platformButtonHints
 - uid: XRControls.XRController.player
   name: player
   href: api/XRControls.XRController.html#XRControls_XRController_player
   commentId: F:XRControls.XRController.player
   fullName: XRControls.XRController.player
   nameWithType: XRController.player
+- uid: XRControls.XRController.rightController
+  name: rightController
+  href: api/XRControls.XRController.html#XRControls_XRController_rightController
+  commentId: F:XRControls.XRController.rightController
+  fullName: XRControls.XRController.rightController
+  nameWithType: XRController.rightController
+- uid: XRControls.XRController.rightGripActive
+  name: rightGripActive
+  href: api/XRControls.XRController.html#XRControls_XRController_rightGripActive
+  commentId: F:XRControls.XRController.rightGripActive
+  fullName: XRControls.XRController.rightGripActive
+  nameWithType: XRController.rightGripActive
+- uid: XRControls.XRController.rightHandActive
+  name: rightHandActive
+  href: api/XRControls.XRController.html#XRControls_XRController_rightHandActive
+  commentId: F:XRControls.XRController.rightHandActive
+  fullName: XRControls.XRController.rightHandActive
+  nameWithType: XRController.rightHandActive
 - uid: XRControls.XRController.terrainTiles
   name: terrainTiles
   href: api/XRControls.XRController.html#XRControls_XRController_terrainTiles
@@ -4508,6 +4598,12 @@ references:
   commentId: F:XRControls.XRController.triggerActive
   fullName: XRControls.XRController.triggerActive
   nameWithType: XRController.triggerActive
+- uid: XRControls.XRController.walkButtonHint
+  name: walkButtonHint
+  href: api/XRControls.XRController.html#XRControls_XRController_walkButtonHint
+  commentId: F:XRControls.XRController.walkButtonHint
+  fullName: XRControls.XRController.walkButtonHint
+  nameWithType: XRController.walkButtonHint
 - uid: XRControls.XRController.xActive
   name: xActive
   href: api/XRControls.XRController.html#XRControls_XRController_xActive
