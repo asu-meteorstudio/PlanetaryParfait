@@ -40,6 +40,7 @@ namespace UserInterface
                 button.onClick.AddListener(delegate
                 {
                     StartCoroutine(LoadTerrain(button.GetComponent<DataPackBehaviour>()));
+                    AnalyticsManager.visitTracker.count++;
                 });
             }
 
