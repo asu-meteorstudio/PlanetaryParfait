@@ -283,7 +283,8 @@ namespace TerrainEngine.Tools
                     if (Input.GetMouseButtonDown(1) || (controlCheck.triggerActive && controlCheck.rightHandActive && !printOnce && !interactingWithUI))
                     {
                         SpawnPin(ray_t, dataOutput, SceneDownloader.singleton.guid);
-                        printOnce = true; 
+                        printOnce = true;
+                        AnalyticsManager.perPixelTracker.pinCount++;
                     }
 
                     break;

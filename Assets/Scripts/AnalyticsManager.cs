@@ -3,52 +3,82 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine;
+using Event = Unity.Services.Analytics.Event;
 
 public class AnalyticsManager : MonoBehaviour
 {
-    public static CustomTerrainTracker currentCustomTerrainEvent;
-    public static TerrainsVisitedTracker visitTracker = new ();
+    public static TerrainUsageTracker terrainTracker;
+    public static PerPixelUsageTracker perPixelTracker;
+    public static LayersUsageTracker layersTracker;
+    public static ScalebarUsageTracker scalebarTracker;
 
     private void OnApplicationQuit()
     {
-        if (currentCustomTerrainEvent != null) currentCustomTerrainEvent.RecordEvent();
-        visitTracker.RecordEvent();
+        if (terrainTracker != null) terrainTracker.RecordEvent();
+        if (perPixelTracker != null) perPixelTracker.RecordEvent();
+        if (layersTracker != null) layersTracker.RecordEvent();
+        if (scalebarTracker != null) scalebarTracker.RecordEvent();
         Debug.Log("All events recorded");
     }
 }
 
-public class TerrainsVisitedTracker : Unity.Services.Analytics.Event
+public class PerPixelUsageTracker : BaseToolTracker
 {
-    public TerrainsVisitedTracker() : base("terrainsVisited") { }
-
-    public void RecordEvent()
+    public PerPixelUsageTracker() : base("perPixelUsageTracker") { }
+    public new void RecordEvent()
     {
-        terrainCount = count;
-        AnalyticsService.Instance.RecordEvent(this);
+        pinsPlaced = pinCount;
+        base.RecordEvent();
     }
 
-    public int count = 1; // including starting terrain
-    int terrainCount { set { SetParameter("terrainCount", value);}}
+    public int pinCount = 0;
+    int pinsPlaced { set => SetParameter("pinsPlaced", value); }
 }
 
-public class CustomTerrainTracker : Unity.Services.Analytics.Event
+public class LayersUsageTracker : BaseToolTracker
 {
-    public CustomTerrainTracker(string name, string url) : base("customTerrainTracker")
+    public LayersUsageTracker() : base("layersUsageTracker") { }
+}
+
+public class ScalebarUsageTracker : BaseToolTracker
+{
+    public ScalebarUsageTracker() : base("scalebarUsageTracker") { }
+}
+
+public class TerrainUsageTracker : BaseToolTracker
+{
+    /// <summary>
+    /// Terrain tracker event constructor
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="url">Terrain JSON url</param>
+    /// <param name="terrainType">True if custom terrain, false if sample terrain.</param>
+    public TerrainUsageTracker(string name, string url, bool customTerrain) : base("terrainUsageTracker")
     {
-        startTime = Time.time;
         terrainName = name;
         terrainURL = url;
+        isCustom = customTerrain;
+    }
+    
+    string terrainName { set { SetParameter("terrainName", value);}}
+    string terrainURL { set { SetParameter("terrainURL", value);}}
+    bool isCustom { set {SetParameter("isCustomTerrain", value);}}
+}
+
+public abstract class BaseToolTracker : Event
+{
+    protected float startTime;
+
+    protected BaseToolTracker(string name) : base(name)
+    {
+        startTime = Time.time;
     }
 
     public void RecordEvent()
     {
-        float endTime = Time.time;
-        usageTime = endTime - startTime;
+        usageTime = Time.time - startTime;
         AnalyticsService.Instance.RecordEvent(this);
     }
-
-    float startTime;
-    float usageTime { set { SetParameter("usageTime", value);}}
-    string terrainName { set { SetParameter("terrainName", value);}}
-    string terrainURL { set { SetParameter("terrainURL", value);}}
+    
+    float usageTime { set => SetParameter("usageTime", value); }
 }

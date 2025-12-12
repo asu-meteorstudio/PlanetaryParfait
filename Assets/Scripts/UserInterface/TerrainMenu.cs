@@ -130,13 +130,12 @@ namespace UserInterface
                     ToggleMenu(false);
                     PreviousMenu = this;
 
-                    if (AnalyticsManager.currentCustomTerrainEvent != null)
+                    if (AnalyticsManager.terrainTracker != null)
                     {
-                        AnalyticsManager.currentCustomTerrainEvent.RecordEvent();
+                        AnalyticsManager.terrainTracker.RecordEvent();
                     }
 
-                    AnalyticsManager.currentCustomTerrainEvent = new CustomTerrainTracker(scene.scene_name, url);
-                    AnalyticsManager.visitTracker.count++;
+                    AnalyticsManager.terrainTracker = new TerrainUsageTracker(scene.scene_name, url, true);
                 });
 
             }

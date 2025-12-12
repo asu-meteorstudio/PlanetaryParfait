@@ -226,11 +226,31 @@ namespace UserInterface
             clearAllPins.gameObject.SetActive(GameState.InMultiuser && NetworkManager.Singleton.IsHost);
             PerPixelDataReader.singleton.readingData = active;
             perPixelPanel.SetActive(active);
+
+            if (active) AnalyticsManager.perPixelTracker = new PerPixelUsageTracker();
+            else
+            {
+                if (AnalyticsManager.perPixelTracker != null)
+                {
+                    AnalyticsManager.perPixelTracker.RecordEvent();
+                    AnalyticsManager.perPixelTracker = null; // reset
+                }
+            }
         }
 
         private void ToggleLayersPanel(bool active)
         {
             terrainLayers.SetActive(active);
+
+            if (active) AnalyticsManager.layersTracker = new LayersUsageTracker();
+            else
+            {
+                if (AnalyticsManager.layersTracker != null)
+                {
+                    AnalyticsManager.layersTracker.RecordEvent();
+                    AnalyticsManager.layersTracker = null; // reset
+                }
+            }
         }
         
         private void ToggleTerrainsPanel(bool active) 
@@ -260,6 +280,16 @@ namespace UserInterface
             ScaleBar.singleton.scalebarMode = active;
             scaleBarPanel.SetActive(active);
             colorPickerPanel.SetActive(false);
+
+            if (active) AnalyticsManager.scalebarTracker = new ScalebarUsageTracker();
+            else
+            {
+                if (AnalyticsManager.scalebarTracker != null)
+                {
+                    AnalyticsManager.scalebarTracker.RecordEvent();
+                    AnalyticsManager.scalebarTracker = null;
+                }
+            }
         }
         
         
