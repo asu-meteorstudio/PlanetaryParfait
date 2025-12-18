@@ -125,11 +125,9 @@ namespace TerrainEngine{
             //Sets the transparency value based on what is stored on JMARS' servers
             foreach (var layer in scene.layers)
                 layer.transparency = layer.toggle_state == "true" ? 1 : 0;
-            
+
             //PerPixelDataReader.singleton.InstantiateNomenclature(); 
             //NomenclatureDataReader.Singleton.InstantiateNomenclature(SceneDownloader.singleton.nomenclature, scene.depthTexture);
-
-
         }
 
         /// <summary>

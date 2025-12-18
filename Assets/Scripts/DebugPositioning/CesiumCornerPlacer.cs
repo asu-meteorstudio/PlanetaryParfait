@@ -35,22 +35,29 @@ public class CesiumCornerPlacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         ellipsoid = GeoRef.ellipsoid;
         JMARSScene scene = SceneMaterializer.singleton.selectedScene;
-        center.position = getSpherePostion(Convert.ToDouble(scene.scene_center_lon) * -1f, Convert.ToDouble(scene.scene_center_lat));
-        var tllatlon = scene.top_left.Split(", ");
-        topleft.position = getSpherePostion(Convert.ToDouble(tllatlon[0]), Convert.ToDouble(tllatlon[1]));
-        var trlatlon = scene.top_right.Split(", ");
-        topright.position = getSpherePostion(Convert.ToDouble(trlatlon[0]), Convert.ToDouble(trlatlon[1]));
-        var bllatlon = scene.bottom_left.Split(", ");
-        botleft.position = getSpherePostion(Convert.ToDouble(bllatlon[0]), Convert.ToDouble(bllatlon[1]));
-        var brlatlon = scene.bottom_right.Split(", ");
-        botright.position = getSpherePostion(Convert.ToDouble(brlatlon[0]), Convert.ToDouble(brlatlon[1]));
 
-        
-        //Debug.Log("Left Side: " + (topleft.position - botleft.position).ToString());
-        //Debug.Log("Right Side: " + (topright.position - botright.position).ToString());
-        //Debug.Log("Top Side: " + (topleft.position - topright.position).ToString());
-        //Debug.Log("Bot Side: " + (botleft.position - botright.position).ToString());
+        //TODO: Convert Scene Center coordinates to (180, -180) for GeoReference
+        GeoRef.latitude = Convert.ToDouble(scene.scene_center_lat) ;
+        GeoRef.longitude = Convert.ToDouble(scene.scene_center_lon) * -1;
+
+        center.position = getSpherePostion(Convert.ToDouble(scene.scene_center_lon) * -1f, Convert.ToDouble(scene.scene_center_lat));
+        var tllonlat = scene.top_left.Split(", ");
+        topleft.position = getSpherePostion(Convert.ToDouble(tllonlat[0]), Convert.ToDouble(tllonlat[1]));
+        var trlonlat = scene.top_right.Split(", ");
+        topright.position = getSpherePostion(Convert.ToDouble(trlonlat[0]), Convert.ToDouble(trlonlat[1]));
+        var bllonlat = scene.bottom_left.Split(", ");
+        botleft.position = getSpherePostion(Convert.ToDouble(bllonlat[0]), Convert.ToDouble(bllonlat[1]));
+        var brlonlat = scene.bottom_right.Split(", ");
+        botright.position = getSpherePostion(Convert.ToDouble(brlonlat[0]), Convert.ToDouble(brlonlat[1]));
+
+        /*
+        Debug.Log("Left Side: " + (topleft.position - botleft.position).ToString());
+        Debug.Log("Right Side: " + (topright.position - botright.position).ToString());
+        Debug.Log("Top Side: " + (topleft.position - topright.position).ToString());
+        Debug.Log("Bot Side: " + (botleft.position - botright.position).ToString());
+        */
     }
 }
