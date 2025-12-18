@@ -68,7 +68,7 @@ namespace TerrainEngine {
                 {
                     // Interpolating between the start and end longitudes of the scene (this gets calculated length times. Optimize with dynamic programming later)
                     double lon = startlon + (j / (width - 1d)) * (endlon - startlon);
-                    Debug.Log(lat + ", " + lon);
+                    //Debug.Log(lat + ", " + lon);
                     // Get the position on the sphere for the vertex
                     vertices[i, j] = getSpherePostion(lon, lat);
                     

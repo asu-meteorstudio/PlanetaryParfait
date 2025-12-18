@@ -46,7 +46,7 @@ Material:
     - _length: 513
     - _numTiles: 30
     - _offset: 0
-    - _scaleFactor: 0.0000040000004
+    - _scaleFactor: 0.003
     - _scaleFactor2: 1
     - _width: 1196
     m_Colors:
