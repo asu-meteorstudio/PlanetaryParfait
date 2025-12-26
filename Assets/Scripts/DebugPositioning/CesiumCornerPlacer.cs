@@ -26,6 +26,7 @@ public class CesiumCornerPlacer : MonoBehaviour
     {
         //float theta = Mathf.Deg2Rad * lon;
         //float phi = Mathf.Deg2Rad * lat;
+        if (lon < -180) { lon = 360 + lon; }
         double3 lonlath = new double3(lon, lat, 0d);
         double3 ecef = ellipsoid.LongitudeLatitudeHeightToCenteredFixed(lonlath);
         double3 d3pos = GeoRef.TransformEarthCenteredEarthFixedPositionToUnity(ecef);
@@ -38,10 +39,11 @@ public class CesiumCornerPlacer : MonoBehaviour
         
         ellipsoid = GeoRef.ellipsoid;
         JMARSScene scene = SceneMaterializer.singleton.selectedScene;
-
-        //TODO: Convert Scene Center coordinates to (180, -180) for GeoReference
-        GeoRef.latitude = Convert.ToDouble(scene.scene_center_lat) ;
-        GeoRef.longitude = Convert.ToDouble(scene.scene_center_lon) * -1;
+        // This code is duplicated in SphereShellMaker!! 
+        double lat = Convert.ToDouble(scene.scene_center_lat) ;
+        double lon = Convert.ToDouble(scene.scene_center_lon) * -1;
+        if (lon < -180) { lon = 360 + lon; }
+        GeoRef.SetOriginLongitudeLatitudeHeight(lon, lat, 0);
 
         center.position = getSpherePostion(Convert.ToDouble(scene.scene_center_lon) * -1f, Convert.ToDouble(scene.scene_center_lat));
         var tllonlat = scene.top_left.Split(", ");

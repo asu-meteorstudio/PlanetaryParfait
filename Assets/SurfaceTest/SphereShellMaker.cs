@@ -14,7 +14,7 @@ namespace TerrainEngine {
         // Length and Width (in vertices) of the shell. 
         public int length = 100;
         public int width = 200;
-
+        public double surfaceHeight = 10;
         public Material material;
         public GameObject Instance;
         // Stuff for creating the mesh.
@@ -32,7 +32,8 @@ namespace TerrainEngine {
         //[SerializeField] public Vector3 GeoRefPosition;
         Vector3 getSpherePostion(double lon, double lat)
         {
-            double3 lonlath = new double3(lon, lat, 0d);
+            if (lon < -180) { lon = 360 + lon; }
+            double3 lonlath = new double3(lon, lat, surfaceHeight);
             double3 ecef = ellipsoid.LongitudeLatitudeHeightToCenteredFixed(lonlath);
             double3 d3pos = GeoRef.TransformEarthCenteredEarthFixedPositionToUnity(ecef);
             Vector3 v3pos = new Vector3((float)d3pos.x, (float)d3pos.y, (float)d3pos.z);
@@ -76,18 +77,17 @@ namespace TerrainEngine {
                     //normals[i, j] = (vertices[i,j] - GeoRefPosition).normalized;
 
                     // Set the uv of this vertex (the -1s here are so that the edge vertices have a uv of 1)
-                    // The 
                     uvs[i, j] = new Vector2(j/(width - 1f), (length-1-i) / (length - 1f));
                     
                     // Triangles is a list of indices. 
                     if (i < length - 1 && j < width - 1)
                     {
                         triangles[i, j, 0] = i * length + j;
-                        triangles[i, j, 2] = i * length + j + 1;
-                        triangles[i, j, 1] = (i+1) * length + j;
+                        triangles[i, j, 1] = i * length + j + 1;
+                        triangles[i, j, 2] = (i+1) * length + j;
                         
-                        triangles[i, j, 4] = i * length + j + 1;
-                        triangles[i, j, 3] = (i + 1) * length + j + 1;
+                        triangles[i, j, 3] = i * length + j + 1;
+                        triangles[i, j, 4] = (i + 1) * length + j + 1;
                         triangles[i, j, 5] = (i + 1) * length + j;
                     }
                 }
@@ -101,16 +101,16 @@ namespace TerrainEngine {
             ellipsoid = GeoRef.ellipsoid;
 
 
-            //TODO: Convert Scene Center coordinates to (180, -180) for GeoReference
             // This code is duplicated in CesiumCornerPlacer!!
             double lat = Convert.ToDouble(scene.scene_center_lat);
             double lon = Convert.ToDouble(scene.scene_center_lon) * -1;
+            if (lon < -180) { lon = 360 + lon; }
             GeoRef.SetOriginLongitudeLatitudeHeight(lon, lat, 0);
 
             //Instantiate(Instance, getSpherePostion(lon, lat), Quaternion.identity, this.transform);
             //Instantiate(Instance, getSpherePostion(startlon, startlat), Quaternion.identity, this.transform);
             MakeVertices();
-
+        
             Destroy(surface);
             // Make the mesh that will be assigned to the new gameobject
             Mesh mesh = new Mesh {name = "Mesh Name" };
@@ -125,7 +125,7 @@ namespace TerrainEngine {
 
             mesh.SetUVs(0, uvs.Cast<Vector2>().ToArray());
             mesh.triangles = triangles.Cast<int>().ToArray();
-            
+
             // Recalculate stuff. 
             mesh.RecalculateNormals();
             mesh.RecalculateBounds();
@@ -133,24 +133,24 @@ namespace TerrainEngine {
 
             GameObject obj = new GameObject("hi :3");
             obj.transform.parent = this.transform;
-            obj.transform.localRotation = Quaternion.identity;
+            //obj.transform.localRotation = Quaternion.identity;
             obj.AddComponent<MeshFilter>();
             obj.AddComponent<MeshRenderer>();
             obj.GetComponent<MeshFilter>().mesh = mesh;
             obj.GetComponent<MeshRenderer>().material = material;
             surface = obj;
+        
 
-            
-            // DEBUG: Instantiates points at the vertices. 
-            //for (int i = 0; i < vertices.GetLength(0); i++)
-            //{
-            //    for (int j = 0; j < vertices.GetLength(1); j++)
-            //    {
-            //        var obj = Instantiate(Instance, Vector3.zero, Quaternion.identity, this.transform);
-            //        obj.transform.SetPositionAndRotation(vertices[i, j], Quaternion.identity);
-            //        obj.name = i + ", " + j;
-            //    }
-            //}
+        //DEBUG: Instantiates points at the vertices.
+        //    for (int i = 0; i < vertices.GetLength(0); i++)
+        //    {
+        //        for (int j = 0; j < vertices.GetLength(1); j++)
+        //        {
+        //            var obj = Instantiate(Instance, Vector3.zero, Quaternion.identity, this.transform);
+        //            obj.transform.SetPositionAndRotation(vertices[i, j], Quaternion.identity);
+        //            obj.name = i + ", " + j;
+        //        }
+        //    }
         }
 
         private void Awake()
