@@ -13,7 +13,6 @@ public class UnityServicesManager : MonoBehaviour
     {
         await UnityServices.InitializeAsync();  // Initialize Unity services, pulls services from Unity Dashboard
         SignInUserAnonymously();
-        UnityServices.ExternalUserId = "user-" + Guid.NewGuid(); // TODO: Delete after AGU
         AnalyticsService.Instance.StartDataCollection();
     }
     
