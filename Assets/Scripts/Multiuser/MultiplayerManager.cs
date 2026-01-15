@@ -28,37 +28,10 @@ namespace Multiuser
         {
             Instance = this;
             joinCode = "";
-            
-            SignInUserAnonymously();
+            playerName = "Player" + UnityEngine.Random.Range(10, 99);
             //voiceChat = FindObjectOfType<VoiceChat>(); // TODO: instantiate on session start, destroy on session end
         }
-
-        /// <summary>
-        /// Signs the user in anonymously from their local machine. This is a standard for Relay and Lobby that all users must be signed in before they can join a server. 
-        /// /// </summary>
-        private async void SignInUserAnonymously() // runs code asynchronously -- sends request to internet when request is made
-        {
-            try
-            {
-                // Initialize Unity services, pulls services from Unity Dashboard
-                await UnityServices.InitializeAsync();
-                AuthenticationService.Instance.SignedIn += () =>
-                {
-                    Debug.Log("Signed in " + AuthenticationService.Instance.PlayerId);
-                };
-
-                await AuthenticationService.Instance.SignInAnonymouslyAsync();
-                playerName = "Player" + UnityEngine.Random.Range(10, 99);
-            }
-            //if there are exceptions, it keeps trying until user is authenticated
-            catch(Exception e) when (e is AuthenticationException || e is RequestFailedException)
-            {
-                Debug.LogError(e);
-                SignInUserAnonymously();
-            }
-
-        }
-
+        
         /// <summary>
         /// Creates a Relay when user opens a Lobby. 
         /// </summary>

@@ -121,14 +121,21 @@ namespace UserInterface
                     DepopulateLayers(); //Get rid of the layers from the previous terrain
                     
                     //NewMenuManager.singleton.previouslyOpenedMenu = "CustomTerrains";
-                    SceneDownloader.singleton.terrainURL =
-                        "https://cm.mars.asu.edu/api/vr/viewScene.php?access_key=" + scene.access_key;
+                    string url = "https://cm.mars.asu.edu/api/vr/viewScene.php?access_key=" + scene.access_key;
+                    SceneDownloader.singleton.terrainURL = url;
                     
                     LoadingBar.OpenMenu.Invoke(true);
                     StartCoroutine(SceneDownloader.singleton.ChangeState(SceneDownloader.SceneSession.DOWNLOADING));
                     
                     ToggleMenu(false);
                     PreviousMenu = this;
+
+                    if (AnalyticsManager.terrainTracker != null)
+                    {
+                        AnalyticsManager.terrainTracker.RecordEvent();
+                    }
+
+                    AnalyticsManager.terrainTracker = new TerrainUsageTracker(scene.scene_name, url, true);
                 });
 
             }

@@ -106,8 +106,7 @@ namespace TerrainEngine.Tools
             }
 
             // If the user changes the terrain to a SAMPLE TERRAIN, update the Scalebar prefabs stored in the bars list.
-            if (_SampleTerrainsMenu
-                .loadedSampleTerrain) // loadedSampleTerrain tells us when a sample terrain is being loaded
+            if (_SampleTerrainsMenu.loadedSampleTerrain) // loadedSampleTerrain tells us when a sample terrain is being loaded
             {
                 changeTextOnce = true;
                 _SampleTerrainsMenu.loadedSampleTerrain = false;
@@ -134,8 +133,7 @@ namespace TerrainEngine.Tools
                 if (Input.GetMouseButtonDown(1) || (controlCheck.aActive && !pressedThisFrame))
                 {
                     // Go to the next scale length
-                    pressedThisFrame =
-                        true; // ensures the code only runs once so we correctly switch to the next scale for VR
+                    pressedThisFrame = true; // ensures the code only runs once so we correctly switch to the next scale for VR
                     index += 1;
                     if (index < 0 || index >= bars.Count)
                     {
@@ -144,7 +142,6 @@ namespace TerrainEngine.Tools
 
                     Destroy(obj);
                     placeOnce = false; // this will spawn the next scalebar. Make this more efficient?
-
                 }
 
                 // calculate scale --  **make a variable so this does not happen every frame

@@ -218,6 +218,12 @@ namespace TerrainEngine
             ScaleBar.singleton.CalculatePrefabs(currentScene);
             LoadingBar.DoneLoading();
             
+            if (AnalyticsManager.terrainTracker != null)
+            {
+                AnalyticsManager.terrainTracker.RecordEvent();
+            }
+
+            AnalyticsManager.terrainTracker = new TerrainUsageTracker(currentScene.name, datapack.jsonURL, false);
         }
     }
 }
