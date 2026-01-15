@@ -11,10 +11,10 @@
 ## Overview
 Planetary Parfait is a scientific visualization platform that immerses you in custom 3D terrain and data layers while offering cross-platform collaboration between desktop and VR users. Engage in conversations over rich scientific data. The source data is planetary GIS data from the [Java Mission-planning and    Analysis for Remote Sensing (JMARS)](https://jmars.asu.edu/) software tool, which leverages public NASA databases.
 
-Users can prepare terrains using JMARS GIS, save them to their accounts, and easily access them in Parfait. Our Terrain Engine brings the prepared terrain DEMs and data layers into an immersive 3D environment. Whether you're analyzing surface features, navigating a lunar landing site, or preparing a virtual field trip to Mars, Planetary Parfait provides an engaging and dynamic way to interact with 3D terrain data.
+Users can prepare terrains using JMARS GIS, save them to their accounts, and easily access them via the Custom Terrains option in Parfait. Parfait's Terrain Engine brings the prepared terrain DEMs and data layers into an immersive 3D environment. Whether you're analyzing surface features, navigating a lunar landing site, or preparing a virtual field trip to Mars, Planetary Parfait provides an engaging and dynamic way to interact with 3D terrain data.
 
 ## Usage
-This project is compatible with Unity Game Engine versions 2020.x and up and can be deployed to Meta Quests 1 and 2 as well as Mac/PC executables. Please download the repository and open a new project through Unity Hub. Inside Unity, double-click the JMARS_Scene to get started.
+This project is compatible with Unity Game Engine versions 2022.x and up and can be deployed to Meta Quests 1,2, and 3 as well as Mac/PC executables. Please download the repository and open a new project through Unity Hub. Inside Unity, double-click the JMARS_Scene to get started.
 
 ## Documentation
 View API reference for Planetary Parfait here: [https://asu-meteorstudio.github.io/PlanetaryParfait/](https://asu-meteorstudio.github.io/PlanetaryParfait/api/TerrainEngine.html)
@@ -31,8 +31,8 @@ For information about the Meteor Studio Research lab, please visit our lab's [we
 
 ## People
 ### Project Leads
-- [Lauren Gold](https://github.com/LaurenGold) - Project Lead, PhD Student
-- [Dr. Robert LiKamWa]() - PI
+- [Dr. Lauren Gold](https://github.com/LaurenGold)
+- [Dr. Robert LiKamWa](https://github.com/roblkw-asu)
 
 ### Student Developers 
 - Yan Rong
