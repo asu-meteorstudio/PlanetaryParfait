@@ -31,6 +31,12 @@
                 ]
             },
             {
+                "files": [
+                    "docs/toc.yml",
+                    "docs/**.md"
+                ]
+            },
+            {
                 "src": "api",
                 "files": [
                     "*.yml"
