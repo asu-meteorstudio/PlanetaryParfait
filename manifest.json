@@ -803,6 +803,30 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "docs/privacy.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/privacy.html",
+          "hash": "0E38ls2NJ8AEXUqh741V5Wn9z9pGEsuq4VEnl4AC66w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html",
+          "hash": "NQbyBxiXor2NpMhM7y4mzaKpiEXvrrdOuj+ecj/ptYM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "log_codes": [
         "InvalidFileLink"
       ],
@@ -867,7 +891,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "clCbzTuGS4hxlPkll6zkD+9KPZL3j8/LuaNAlwbx/Bc="
+          "hash": "pChDynph7QfMyLu3PvuwXTIriuBP/yD2W/UMQHGlWv0="
         }
       },
       "is_incremental": false,
@@ -888,7 +912,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 1,
+          "total_file_count": 2,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
