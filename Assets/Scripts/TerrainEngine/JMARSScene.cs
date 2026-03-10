@@ -130,7 +130,7 @@ namespace TerrainEngine
                 {
                     PerPixelDataReader.singleton.ClearPerPixelData();
                     NomenclatureDataReader.singleton.DeleteNomenclature();
-                    SceneDownloader.singleton.nomenclature = null;
+                    SceneDownloader.singleton.nomenclature.text_data.Clear();
                 }
                 
                 SceneDownloader.singleton.datalayertextures.Clear();
@@ -212,7 +212,7 @@ namespace TerrainEngine
             TerrainMenu.layersDelegate.Invoke(currentScene);
             SceneMaterializer.singleton.selectedScene = currentScene;
             SceneMaterializer.singleton.SetMaterials(currentScene);
-            if(SceneDownloader.singleton.nomenclature != null) NomenclatureDataReader.singleton.InstantiateNomenclature(SceneDownloader.singleton.nomenclature);
+            if(SceneDownloader.singleton.nomenclature.text_data.Count != 0) NomenclatureDataReader.singleton.InstantiateNomenclature(SceneDownloader.singleton.nomenclature);
             
             InfoPanel.Panel.UpdateInfo(currentScene);
             ScaleBar.singleton.CalculatePrefabs(currentScene);

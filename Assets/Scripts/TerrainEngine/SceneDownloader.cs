@@ -102,7 +102,7 @@ namespace TerrainEngine
                 case SceneSession.READY:
                     SceneMaterializer.singleton.SetMaterials(scene);
                     SceneMaterializer.singleton.selectedScene = scene;
-                    if(nomenclature != null) NomenclatureDataReader.singleton.InstantiateNomenclature(nomenclature);
+                    if(nomenclature.text_data.Count != 0) NomenclatureDataReader.singleton.InstantiateNomenclature(nomenclature);
                     
                     InfoPanel.Panel.UpdateInfo(scene);
                     ScaleBar.singleton.CalculatePrefabs(scene);
@@ -111,7 +111,6 @@ namespace TerrainEngine
                 case SceneSession.DONE:
                     break;
             }
-
         }
 
         #endregion
@@ -185,8 +184,7 @@ namespace TerrainEngine
             dataLayers.Clear();
             PerPixelDataReader.singleton.ClearPerPixelData();
             NomenclatureDataReader.singleton.DeleteNomenclature();
-            nomenclature = null;
-            //terrainURL = ""; //resets terrain URL
+            nomenclature.text_data.Clear();
             
             // Download json for individual scene
             int width = 0;
@@ -290,6 +288,9 @@ namespace TerrainEngine
                         break;
                     default:
                         Debug.LogError("Height map data type error!");
+                        StopAllCoroutines();
+                        ChangeState(SceneSession.DONE);
+                        LoadingBar.Instance.AbortLoading("Height Map Data Type Error!");
                         break;
                 }
             }

@@ -11,6 +11,7 @@ namespace UserInterface
 {
     public class LoadingBar : Menu
     {
+        public static LoadingBar Instance { get; private set; }
         public static ToggleDelegate OpenMenu { get; private set; }
         /// <summary>
         /// Loading Bar delegate handles all calls and updated to the loading bar menu
@@ -30,9 +31,15 @@ namespace UserInterface
         [Header("Audio Cues")] 
         public AudioSource buttonClick;
         public AudioSource loadingSound;
+        
+                
+        [Header("Error Handling Assets")] 
+        public Button errorButton;
 
         void Awake()
         {
+            Instance = this;
+            
             OpenMenu = ToggleMenu;
             loadingBar.value = 0f;
             Loading = UpdateValue;
@@ -58,11 +65,20 @@ namespace UserInterface
                 Abort = true;
                 SceneDownloader.singleton.StopAllCoroutines();
                 StartCoroutine(SceneDownloader.singleton.ChangeState(SceneDownloader.SceneSession.DONE));
-
                 CloseMenu(0f, ""); //resets loading bar to zero
                 MainMenu.Instance.CloseAllMenus();
                 PreviousMenu.ToggleMenu(true);
                 
+            });
+            
+            errorButton.onClick.AddListener(delegate
+            {
+                buttonClick.Play();
+                loadingText.color = Color.white;
+                CloseMenu(0f, "");
+                MainMenu.Instance.CloseAllMenus();
+                PreviousMenu.ToggleMenu(true);
+                errorButton.gameObject.SetActive(false);
             });
         }
 
@@ -82,6 +98,15 @@ namespace UserInterface
 
             loadingPercent.text = value + "%";
             loadingText.text = text;
+        }
+
+        public void AbortLoading(string errorMessage)
+        {
+            loadingSound.Stop();
+            loadingText.color = Color.red;
+            loadingText.text = errorMessage;
+            
+            errorButton.gameObject.SetActive(true);
         }
     }
 }
