@@ -532,7 +532,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UserInterface.LoadingBar.html",
-          "hash": "WqUrTgGOUZq56VA5MTRHYSzY93k9sqitBIjf4nvy56U="
+          "hash": "azMv5nl5uYqT5XG6dxYB+VWZEHYMzbEl4BRa/veIVzc="
         }
       },
       "is_incremental": false,
@@ -760,7 +760,7 @@
       "output": {
         ".html": {
           "relative_path": "api/XRControls.XRController.html",
-          "hash": "EuisIxmZuQttSelVI4geXM20vA9971GSyNWKBPuuhQM="
+          "hash": "6fv/z2mJkb8mELarN7DFyXowr3pO6qi8oYfrRRys/dA="
         }
       },
       "is_incremental": false,

@@ -2485,6 +2485,19 @@ references:
   commentId: F:UserInterface.LoadingBar.Abort
   fullName: UserInterface.LoadingBar.Abort
   nameWithType: LoadingBar.Abort
+- uid: UserInterface.LoadingBar.AbortLoading(System.String)
+  name: AbortLoading(String)
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_AbortLoading_System_String_
+  commentId: M:UserInterface.LoadingBar.AbortLoading(System.String)
+  fullName: UserInterface.LoadingBar.AbortLoading(System.String)
+  nameWithType: LoadingBar.AbortLoading(String)
+- uid: UserInterface.LoadingBar.AbortLoading*
+  name: AbortLoading
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_AbortLoading_
+  commentId: Overload:UserInterface.LoadingBar.AbortLoading
+  isSpec: "True"
+  fullName: UserInterface.LoadingBar.AbortLoading
+  nameWithType: LoadingBar.AbortLoading
 - uid: UserInterface.LoadingBar.buttonClick
   name: buttonClick
   href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_buttonClick
@@ -2504,12 +2517,31 @@ references:
   isSpec: "True"
   fullName: UserInterface.LoadingBar.DoneLoading
   nameWithType: LoadingBar.DoneLoading
+- uid: UserInterface.LoadingBar.errorButton
+  name: errorButton
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_errorButton
+  commentId: F:UserInterface.LoadingBar.errorButton
+  fullName: UserInterface.LoadingBar.errorButton
+  nameWithType: LoadingBar.errorButton
 - uid: UserInterface.LoadingBar.exitButton
   name: exitButton
   href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_exitButton
   commentId: F:UserInterface.LoadingBar.exitButton
   fullName: UserInterface.LoadingBar.exitButton
   nameWithType: LoadingBar.exitButton
+- uid: UserInterface.LoadingBar.Instance
+  name: Instance
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_Instance
+  commentId: P:UserInterface.LoadingBar.Instance
+  fullName: UserInterface.LoadingBar.Instance
+  nameWithType: LoadingBar.Instance
+- uid: UserInterface.LoadingBar.Instance*
+  name: Instance
+  href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_Instance_
+  commentId: Overload:UserInterface.LoadingBar.Instance
+  isSpec: "True"
+  fullName: UserInterface.LoadingBar.Instance
+  nameWithType: LoadingBar.Instance
 - uid: UserInterface.LoadingBar.Loading
   name: Loading
   href: api/UserInterface.LoadingBar.html#UserInterface_LoadingBar_Loading
@@ -4309,6 +4341,12 @@ references:
   commentId: F:XRControls.XRController.leftGripActive
   fullName: XRControls.XRController.leftGripActive
   nameWithType: XRController.leftGripActive
+- uid: XRControls.XRController.mainCamera
+  name: mainCamera
+  href: api/XRControls.XRController.html#XRControls_XRController_mainCamera
+  commentId: F:XRControls.XRController.mainCamera
+  fullName: XRControls.XRController.mainCamera
+  nameWithType: XRController.mainCamera
 - uid: XRControls.XRController.OnA(InputAction.CallbackContext)
   name: OnA(InputAction.CallbackContext)
   href: api/XRControls.XRController.html#XRControls_XRController_OnA_InputAction_CallbackContext_
