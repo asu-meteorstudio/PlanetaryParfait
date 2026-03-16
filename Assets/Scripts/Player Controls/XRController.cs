@@ -1,10 +1,13 @@
 
+using System.Numerics;
 using UnityEngine.InputSystem;
 using UserInterface;
 using TerrainEngine.Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace XRControls
 {
@@ -24,6 +27,7 @@ public class XRController : MonoBehaviour,
     
     [Header("GameObjects")]
     public GameObject player;
+    public Camera mainCamera;
     public Transform terrainTiles;
     public GameObject leftController;
     public GameObject rightController;
@@ -97,7 +101,9 @@ public class XRController : MonoBehaviour,
     private void MovePlatform()
     {
         if (!rightGripActive) return;
-        Vector3 inputDirection = transform.right * movePlatform.x + transform.forward * movePlatform.y;
+        Vector3 normalizedRight = new Vector3(mainCamera.transform.right.x, 0, mainCamera.transform.right.z);
+        Vector3 normalizedForward = new Vector3(mainCamera.transform.forward.x, 0, mainCamera.transform.forward.z);
+        Vector3 inputDirection = normalizedRight * movePlatform.x + normalizedForward * movePlatform.y;
         terrainTiles.position = Vector3.MoveTowards(terrainTiles.gameObject.transform.position, terrainTiles.position - inputDirection, SettingsController.PlatformSpeed() * Time.deltaTime);
 
         //moving pins
@@ -225,7 +231,6 @@ public class XRController : MonoBehaviour,
     public void OnMove(InputAction.CallbackContext context)
     {
         joystickActive = context.performed;
-        print(joystickActive);
         movePlatform = context.ReadValue<Vector2>();
     }
 
