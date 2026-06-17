@@ -17,7 +17,7 @@ namespace UserInterface
         public static LoginDelegate FailedLogin { get; private set; }
         public static MenuDelegate TryLogin { get; private set; }
 
-        public static bool LoggedIn = false;
+        public static bool LoggedIn;
         
         [Header("Login GameObjects")]
         public TMP_InputField usernameField;
@@ -40,7 +40,10 @@ namespace UserInterface
         new void Start()
         {
             base.Start();
-            username = ""; // doesn't save any data after closing app
+            // doesn't save any data after closing app
+            username = "";
+            password = "";
+            LoggedIn = false;
         }
 
         private void Update()

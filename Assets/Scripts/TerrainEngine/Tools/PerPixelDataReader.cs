@@ -240,7 +240,7 @@ namespace TerrainEngine.Tools
                     {
                         if (index <= (heightTexture.width * heightTexture.height))
                         {
-                            byteOutput += byteDataNames[i] + ": " + byteArrays[i][index] + " " +
+                            byteOutput += byteDataNames[i] + ": " + byteArrays[i][index*2] + " " +
                                           byteDataUnits[i] + "\n";
                         }
                         else

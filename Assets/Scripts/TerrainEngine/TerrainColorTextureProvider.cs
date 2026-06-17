@@ -22,6 +22,7 @@ namespace TerrainEngine
     
             resolution = new Vector2Int(200, 200);
             texture = new RenderTexture(200, 200, 16);
+            texture.filterMode = FilterMode.Point;
             quads = new List<GameObject>();
             cam = gameObject.AddComponent<Camera>();
             cam.transform.position = Vector3.zero;
@@ -124,6 +125,7 @@ namespace TerrainEngine
             if (resolution.x != width || resolution.y != height) {
                 resolution = new Vector2Int(width, height);
                 texture = new RenderTexture(width, height, 16);
+                texture.filterMode = FilterMode.Point;
                 cam.targetTexture = texture;
             }
         }
