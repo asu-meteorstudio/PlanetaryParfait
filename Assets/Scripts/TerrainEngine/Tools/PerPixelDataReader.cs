@@ -102,19 +102,48 @@ namespace TerrainEngine.Tools
 
         private void Update()
         {
-            if (pinList.Count != 0)
+            if (GameState.InMultiuser)
             {
-                //Ensure Pin Info follows the pins
-                for (int i = 0; i < pinList.Count; i++)
+                if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.Values != null)
                 {
-                    //ensures pins follow terrain, even if exaggeration changes
-                    pinList[i].pin.transform.position = terrain.transform.TransformPoint(pinList[i].position);
-                    pinList[i].panel.transform.position = new Vector3(pinList[i].pin.transform.position.x,
-                        pinList[i].pin.transform.position.y + 4.5f,
-                        pinList[i].pin.transform.position.z);
-                    pinList[i].panel.transform.localScale = new Vector3(-1, 1, 1);
-                    pinList[i].panel.transform.LookAt(platform.transform); // rotate to platform so it always faces user
+                    var networkPinList = NetworkManager.Singleton.SpawnManager.SpawnedObjects.Values;
+                    foreach (NetworkObject obj in networkPinList)
+                    {
+                        // gets only objects with pin component from spawned network objects
+                        if (obj.TryGetComponent(out Pin pin))
+                        {
+                            //ensures pins follow terrain, even if exaggeration changes
+                            pin.pin.transform.position = terrain.transform.TransformPoint(pin.position);
+                            obj.transform.position = new Vector3(pin.pin.transform.position.x,
+                                obj.GetComponent<Pin>().pin.transform.position.y + 4.5f,
+                                pin.pin.transform.position.z);
+                            obj.transform.localScale = new Vector3(-1, 1, 1);
+                            obj.transform.LookAt(platform.transform); // rotate to platform so it always faces user
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (pinList.Count != 0)
+                {
+                    //Ensure Pin Info follows the pins
+                    for (int i = 0; i < pinList.Count; i++)
+                    {
+                        if (pinList[i] == null || pinList[i].pin == null) {
+                            pinList.Remove(pinList[i]);
+                            continue;
+                        }
 
+                        //ensures pins follow terrain, even if exaggeration changes
+                        pinList[i].pin.transform.position = terrain.transform.TransformPoint(pinList[i].position);
+                        pinList[i].panel.transform.position = new Vector3(pinList[i].pin.transform.position.x,
+                            pinList[i].pin.transform.position.y + 4.5f,
+                            pinList[i].pin.transform.position.z);
+                        pinList[i].panel.transform.localScale = new Vector3(-1, 1, 1);
+                        pinList[i].panel.transform.LookAt(platform.transform); // rotate to platform so it always faces user
+
+                    }
                 }
             }
 
@@ -312,9 +341,13 @@ namespace TerrainEngine.Tools
                     _pin.panel.GetComponent<PerPixelSync>().pinNumber.Value = (pinList.Count+1).ToString();
                     _pin.clientID = NetworkManager.Singleton.LocalClientId;
                     pinList.Add(_pin);
-                    
-                    _pin.pin.GetComponent<NetworkObject>().Spawn();
-                    _pin.panel.GetComponent<NetworkObject>().Spawn();
+
+                    var networkPin = _pin.pin.GetComponent<NetworkObject>();
+                    var networkPanel = _pin.panel.GetComponent<NetworkObject>();
+                    networkPin.Spawn();
+                    networkPanel.GetComponent<Pin>().pinNetworkReference.Value = networkPin;
+                    networkPanel.GetComponent<Pin>().networkPosition.Value = _pin.position;
+                    networkPanel.Spawn();
                 }
                 else
                 {
@@ -416,6 +449,11 @@ namespace TerrainEngine.Tools
             {
                 foreach (Pin pin in pinList)
                 {
+                    if (pin == null || pin.pin == null) {
+                        pinList.Remove(pin);
+                        continue;
+                    }
+                    
                     pin.pin.SetActive(true);
                     pin.panel.SetActive(true);
                     
@@ -425,8 +463,12 @@ namespace TerrainEngine.Tools
                         pin.panel.GetComponent<PerPixelSync>().pinData.Value = pin.data;
                         pin.panel.GetComponent<PerPixelSync>().pinNumber.Value = pin.number;
                         
-                        pin.pin.GetComponent<NetworkObject>().Spawn();
-                        pin.panel.GetComponent<NetworkObject>().Spawn(); 
+                        var networkPin = pin.pin.GetComponent<NetworkObject>();
+                        var networkPanel = pin.panel.GetComponent<NetworkObject>();
+                        networkPin.Spawn();
+                        networkPanel.GetComponent<Pin>().pinNetworkReference.Value = networkPin;
+                        networkPanel.GetComponent<Pin>().networkPosition.Value = pin.position;
+                        networkPanel.Spawn();
                     }
                 }
             }

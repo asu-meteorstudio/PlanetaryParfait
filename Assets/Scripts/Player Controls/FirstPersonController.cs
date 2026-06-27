@@ -155,6 +155,11 @@ namespace XRControls{
                 /*_animator.SetFloat(_animIDSpeed, 0);
                 _animator.SetFloat(_animIDMotionSpeed, 0);*/
             }
+             // reset move vector to 0 if player presses tab or opens menu to prevent movement upon returning from tools/menu
+            else
+            {
+                move = Vector3.zero;
+            }
         }
 
         private void LateUpdate() {

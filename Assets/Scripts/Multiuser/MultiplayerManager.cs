@@ -20,6 +20,7 @@ namespace Multiuser
         public static MultiplayerManager Instance { get; private set; } //Singleton instance
         public string joinCode;
         public string playerName = "";
+        public bool voluntaryDisconnect = false;
 
         public VoiceChat voiceChat;
         [SerializeField] private bool developerMode;
@@ -37,6 +38,7 @@ namespace Multiuser
         /// </summary>
         public async void CreateRelay()
         {
+            voluntaryDisconnect = false;
             PerPixelDataReader.singleton.DisablePins();
             NomenclatureDataReader.singleton.DisablePins();
             LoadingBar.OpenMenu(true);
@@ -112,7 +114,10 @@ namespace Multiuser
         /// <param name="roomJoinCode"></param>
         public async void JoinRelay(string roomJoinCode)
         {
+            voluntaryDisconnect = false;
             Debug.Log("joining..");
+            PerPixelDataReader.singleton.DisablePins();
+            NomenclatureDataReader.singleton.DisablePins();
             LoadingBar.OpenMenu(true);
             try
             {
@@ -205,8 +210,8 @@ namespace Multiuser
             else 
                 voiceChat.LeaveChannelAsync(joinCode);*/
             
+            voluntaryDisconnect = true;
             NetworkManager.Singleton.Shutdown();
         }
     }
-
 }

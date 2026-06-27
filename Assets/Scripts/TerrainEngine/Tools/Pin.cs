@@ -14,6 +14,10 @@ namespace TerrainEngine.Tools
     /// </summary>
     public class Pin : NetworkBehaviour
     {
+        // network variables to assign on spawn 
+        public NetworkVariable<NetworkObjectReference> pinNetworkReference = new NetworkVariable<NetworkObjectReference>();
+        public NetworkVariable<Vector3> networkPosition = new NetworkVariable<Vector3>();
+
         [Header("Pin Objects")] public GameObject pin; //pin object
         public GameObject panel; //panel Prefab
         public TMP_Text pinNumber; //pin count
@@ -27,5 +31,19 @@ namespace TerrainEngine.Tools
         [Header("Multiuser")] 
         public ulong clientID = 0; // client who placed pin
         public string guid; //Holds players unique guid for individual deletion
+
+        public override void OnNetworkSpawn()
+        {
+            base.OnNetworkSpawn();
+
+            // sets pin reference to corresponding spawned pin network object to allow pin movement with local users' terrain exaggeration
+            if (pinNetworkReference.Value.TryGet(out NetworkObject pinNetworkObject))
+            {
+                pin = pinNetworkObject.gameObject;
+                panel = this.gameObject;
+                position = networkPosition.Value;
+            }
+            else Debug.Log("HELLO");
+        }
     }
 }
