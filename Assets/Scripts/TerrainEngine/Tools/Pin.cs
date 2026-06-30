@@ -36,14 +36,25 @@ namespace TerrainEngine.Tools
         {
             base.OnNetworkSpawn();
 
-            // sets pin reference to corresponding spawned pin network object to allow pin movement with local users' terrain exaggeration
-            if (pinNetworkReference.Value.TryGet(out NetworkObject pinNetworkObject))
-            {
-                pin = pinNetworkObject.gameObject;
-                panel = this.gameObject;
-                position = networkPosition.Value;
+            pin = null;
+            
+            // waits until pinNetworkReference is assigned
+            StartCoroutine(WaitForNetworkReference());
+        }
+
+        public IEnumerator WaitForNetworkReference()
+        {
+            while (true){
+                if (pinNetworkReference.Value.TryGet(out NetworkObject pinNetworkObject))
+                {
+                    // sets pin reference to corresponding spawned pin network object to allow pin movement with local users' terrain exaggeration
+                    pin = pinNetworkObject.gameObject;
+                    panel = this.gameObject;
+                    position = networkPosition.Value;
+                    yield break;
+                }
+                yield return null;
             }
-            else Debug.Log("HELLO");
         }
     }
 }

@@ -129,8 +129,19 @@ namespace UserInterface
 
         void Update()
         {
-            resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
-                                               SceneMaterializer.singleton.terrainStartingPosition);
+            if (GameState.InMultiuser)
+            {
+                // shows reset platform button only for host
+                resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
+                                                SceneMaterializer.singleton.terrainStartingPosition &&
+                                                NetworkManager.Singleton.IsHost);
+            }
+            else
+            {
+                resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
+                                                SceneMaterializer.singleton.terrainStartingPosition);
+            }
+            
         }
         
         #endregion
