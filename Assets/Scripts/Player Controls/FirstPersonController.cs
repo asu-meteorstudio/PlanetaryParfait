@@ -148,17 +148,32 @@ namespace XRControls{
             }
             if (cursorLocked)
             {
-                if(movePlatform) MovePlatform();
+                if(movePlatform) 
+                {
+                    MovePlatform();
+
+                    // stops animations from playing while platform is moving
+                    _animationBlend = Mathf.Lerp(_animationBlend, 0f, Time.deltaTime * SpeedChangeRate);
+                    if (_hasAnimator) 
+                    {
+                        _animator.SetFloat(_animIDSpeed, _animationBlend);
+                        _animator.SetFloat(_animIDMotionSpeed, 1f);
+                    }
+                }
                 else Move();
-                
-                // why is this here?
-                /*_animator.SetFloat(_animIDSpeed, 0);
-                _animator.SetFloat(_animIDMotionSpeed, 0);*/
             }
-             // reset move vector to 0 if player presses tab or opens menu to prevent movement upon returning from tools/menu
             else
             {
+                // reset move vector to 0 if player presses tab or opens menu to prevent movement upon returning from tools/menu
                 move = Vector3.zero;
+
+                // stops animations from playing while tab is pressed
+                _animationBlend = Mathf.Lerp(_animationBlend, 0f, Time.deltaTime * SpeedChangeRate);
+                if (_hasAnimator) 
+                {
+                    _animator.SetFloat(_animIDSpeed, _animationBlend);
+                    _animator.SetFloat(_animIDMotionSpeed, 1f);
+                }
             }
         }
 
@@ -233,7 +248,8 @@ namespace XRControls{
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
-            if (move == Vector3.zero) targetSpeed = 0.0f;
+            Vector3 horizontalMove = new Vector3(move.x, move.y, 0f);
+            if (horizontalMove == Vector3.zero) targetSpeed = 0.0f;
 
             // a reference to the players current horizontal velocity
             var currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
