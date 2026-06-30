@@ -29,6 +29,8 @@ namespace Multiuser
         private int _animIDMotionSpeed;
         private float _animationBlend;
 
+        private bool waving;
+
         private Transform spawnPoint; // where the user spawns when they join an experience
 
         [SerializeField] private GameObject localPlayer; // refers to the avatar that the user controls while the game runs locally on their machine
@@ -98,10 +100,44 @@ namespace Multiuser
         {
             _animator = this.GetComponent<Animator>();
 
+            // ensures wave coroutine only triggers when local user is currently waving and networked character mesh is not already waving
+            if (!waving && localPlayer.GetComponent<FirstPersonController>().waving)
+            {
+                StartCoroutine(Wave(_animator));
+            }
+
             _animationBlend = Mathf.Lerp(_animationBlend, localPlayer.GetComponent<FirstPersonController>().GetSpeed(), Time.deltaTime * 10.0f);
             _animator.SetFloat(_animIDSpeed, _animationBlend);
             _animator.SetFloat(_animIDMotionSpeed, 1f);
             
+        }
+
+        public IEnumerator Wave(Animator animator)
+        {
+            waving = true;
+            float blendTime = 0.3f;
+            float elapsedTime = 0;
+            animator.Play("Wave", 1);
+            while (elapsedTime <= blendTime)
+            {
+                animator.SetLayerWeight(1, Mathf.Lerp(0f, 1f, elapsedTime / blendTime));
+                elapsedTime += (float)Time.deltaTime;
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1.2f);
+
+            elapsedTime = 0;
+            while (elapsedTime <= blendTime)
+            {
+                animator.SetLayerWeight(1, Mathf.Lerp(1f, 0f, elapsedTime / blendTime));
+                elapsedTime += (float)Time.deltaTime;
+                yield return null;
+            }
+            animator.Play("Empty", 1);
+            waving = false;
+
+            yield break;
         }
         #endregion
     }
