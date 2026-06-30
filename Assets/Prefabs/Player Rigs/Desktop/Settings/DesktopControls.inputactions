@@ -96,6 +96,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Wave",
+                    "type": "Button",
+                    "id": "5d083a58-c395-4e3f-8598-7a5c53680168",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Rotate Anchor Toggle",
                     "type": "Button",
                     "id": "be0dcf07-65ea-4bdc-a46f-556e62be54a0",
@@ -491,6 +500,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1ec0403-648d-4749-8a8b-f801eef944e4",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Wave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

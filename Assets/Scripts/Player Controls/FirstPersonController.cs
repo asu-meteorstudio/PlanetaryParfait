@@ -104,6 +104,7 @@ namespace XRControls{
         public bool jump;
         private bool rotateAnchor;
         private Vector2 anchorRotation;
+        private bool waving;
 
         //platform movement (controlled by player)
         [Header("Platform GameObject")]
@@ -343,7 +344,30 @@ namespace XRControls{
         {
             return _speed;
         }
-    
+
+        public IEnumerator Wave()
+        {
+            float blendTime = 0.3f;
+            float elapsedTime = 0;
+            _animator.Play("Wave", 1);
+            while (elapsedTime <= blendTime)
+            {
+                _animator.SetLayerWeight(1, Mathf.Lerp(0f, 1f, elapsedTime / blendTime));
+                elapsedTime += (float)Time.deltaTime;
+                yield return null;
+            }
+            yield return new WaitForSeconds(1.2f);
+            elapsedTime = 0;
+            while (elapsedTime <= blendTime)
+            {
+                _animator.SetLayerWeight(1, Mathf.Lerp(1f, 0f, elapsedTime / blendTime));
+                elapsedTime += (float)Time.deltaTime;
+                yield return null;
+            }
+            _animator.Play("Empty", 1);
+            waving = false;
+            yield break;
+        }    
 
         #endregion
 
@@ -369,6 +393,15 @@ namespace XRControls{
         public void OnSprint(InputAction.CallbackContext context) { sprint = context.ReadValueAsButton(); }
 
         public void OnJump(InputAction.CallbackContext context) { jump = context.ReadValueAsButton(); }
+
+        public void OnWave(InputAction.CallbackContext context)
+        {
+            if (context.performed && !waving)
+            {
+                waving = true;
+                StartCoroutine(Wave());
+            }
+        }
 
         public void OnToggleMode(InputAction.CallbackContext context) {
             // This would lock the players movement if they pressed the F key.
