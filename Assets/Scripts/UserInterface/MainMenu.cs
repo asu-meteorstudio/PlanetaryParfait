@@ -43,6 +43,7 @@ namespace UserInterface
             // session starts on main menu
             TogglePrimaryMenu(true);
             ToggleMenu(true);
+            GameState.InTerrain = false;
         }
         
         public override void ToggleMenu(bool active)

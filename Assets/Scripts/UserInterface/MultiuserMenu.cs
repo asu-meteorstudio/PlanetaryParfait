@@ -235,8 +235,8 @@ namespace UserInterface
             parentObject = errorMenu; //sets parent menu to error menu
             errorHeader.text = errorType;
             errorText.text = errorMessage;
-            
             MainMenu.OpenPrimaryMenus(true);
+            MainMenu.Instance.CloseAllMenus();
             ToggleMenu(true);
         }
 
@@ -251,6 +251,7 @@ namespace UserInterface
             errorText.text = errorMessage;
             
             MainMenu.OpenPrimaryMenus(true);
+            MainMenu.Instance.CloseAllMenus();
             ToggleMenu(true);
             TerrainTools.SetClientUI(false);
             

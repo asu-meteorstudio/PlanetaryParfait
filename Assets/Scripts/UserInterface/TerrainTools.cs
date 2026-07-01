@@ -183,6 +183,7 @@ namespace UserInterface
                 ToggleMenu(false);
                 MainMenu.OpenPrimaryMenus(true);
                 MultiuserMenu.OpenMenu.Invoke(true);
+                GameState.InTerrain = false;
                 ToggleTab(false);
                 generalTip.text = "";
             });
@@ -224,6 +225,7 @@ namespace UserInterface
                 
                 MainMenu.OpenPrimaryMenus(true);
                 SettingsController.OpenMenu(true);
+                GameState.InTerrain = false;
                 Deselect();  
             });
         }

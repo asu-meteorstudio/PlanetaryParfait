@@ -85,6 +85,7 @@ namespace UserInterface{
                 ToggleMenu(false);
                 MainMenu.OpenPrimaryMenus(false);
                 TerrainTools.OpenMenu(true);
+                GameState.InTerrain = true;
             });
         }
         

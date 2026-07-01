@@ -347,6 +347,7 @@ namespace XRControls{
 
         public IEnumerator Wave(Animator animator)
         {
+            waving = true;
             float blendTime = 0.3f;
             float elapsedTime = 0;
             animator.Play("Wave", 1);
@@ -401,7 +402,6 @@ namespace XRControls{
         {
             if (context.performed && cursorLocked && !waving)
             {
-                waving = true;
                 StartCoroutine(Wave(_animator));
             }
         }
