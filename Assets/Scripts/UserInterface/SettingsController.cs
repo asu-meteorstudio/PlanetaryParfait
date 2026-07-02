@@ -60,7 +60,7 @@ namespace UserInterface{
             if (GameState.IsVR) // put into toggle listener
             {
                 safeToggle.gameObject.SetActive(true);
-                safeToggle.isOn = false;
+                safeToggle.isOn = true;
                 safeToggle.onValueChanged.AddListener(SafeMode);
                 
                 rotateSlider.gameObject.SetActive(true);
@@ -93,11 +93,11 @@ namespace UserInterface{
         {
             vrPlayer.GetComponent<ContinuousTurnProviderBase>().turnSpeed = 50f;
 
-            // continuous turn is on by default
+            // continuous turn is off by default
             if (GameState.IsVR)
             {
-                xrRig.GetComponent<SnapTurnProviderBase>().enabled = false;
-                xrRig.GetComponent<ContinuousTurnProviderBase>().enabled = true;
+                xrRig.GetComponent<SnapTurnProviderBase>().enabled = true;
+                xrRig.GetComponent<ContinuousTurnProviderBase>().enabled = false;
             }
         }
 

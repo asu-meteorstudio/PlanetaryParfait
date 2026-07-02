@@ -81,6 +81,10 @@ namespace UserInterface
 
         // private vars
         private bool m_TutorialOpen;
+
+        private Color perPixelButtonNormalColor;
+        private Color scaleBarButtonNormalColor;
+        private Color layersButtonNormalColor;
         
         #endregion
         
@@ -107,6 +111,10 @@ namespace UserInterface
             terrainMenuButton = GameState.IsVR ? vrTerrains : desktopTerrains;
             resetPosition = GameState.IsVR ? vrReset : desktopReset;
             settingButton = GameState.IsVR ? vrSettings : desktopSettings;
+
+            perPixelButtonNormalColor = perPixelButton.colors.normalColor;
+            scaleBarButtonNormalColor = scaleBarButton.colors.normalColor;
+            layersButtonNormalColor = layersButton.colors.normalColor;
         }
 
         new void Start()
@@ -236,6 +244,11 @@ namespace UserInterface
         
         private void TogglePerPixelData(bool active)
         {
+            // makes per pixel button highlighted when active
+            ColorBlock perPixelColors = perPixelButton.colors;
+            perPixelColors.normalColor = active ? perPixelButton.colors.highlightedColor : perPixelButtonNormalColor;
+            perPixelButton.colors = perPixelColors;
+
             clearAllPins.gameObject.SetActive(GameState.InMultiuser && NetworkManager.Singleton.IsHost);
             PerPixelDataReader.singleton.readingData = active;
             perPixelPanel.SetActive(active);
@@ -253,6 +266,11 @@ namespace UserInterface
 
         private void ToggleLayersPanel(bool active)
         {
+            // makes layers button highlighted when active
+            ColorBlock layersColors = layersButton.colors;
+            layersColors.normalColor = active ? layersButton.colors.highlightedColor : layersButtonNormalColor;
+            layersButton.colors = layersColors;
+
             terrainLayers.SetActive(active);
 
             if (active) AnalyticsManager.layersTracker = new LayersUsageTracker();
@@ -290,6 +308,11 @@ namespace UserInterface
 
         private void ToggleScaleBar(bool active)
         {
+            // makes scale bar button highlighted when active
+            ColorBlock colors = scaleBarButton.colors;
+            colors.normalColor = active ? scaleBarButton.colors.highlightedColor : scaleBarButtonNormalColor;
+            scaleBarButton.colors = colors;
+
             ScaleBar.singleton.scalebarMode = active;
             scaleBarPanel.SetActive(active);
             colorPickerPanel.SetActive(false);
