@@ -150,7 +150,6 @@ namespace UserInterface
         /// <param name="scene"></param>
         private void PopulateLayers(JMARSScene scene)
         {
-            GameState.InTerrain = true;
             //destroys old layers
             if (LayersParent.transform.childCount != 0)
             {

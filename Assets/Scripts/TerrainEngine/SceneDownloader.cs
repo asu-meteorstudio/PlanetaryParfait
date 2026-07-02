@@ -107,6 +107,7 @@ namespace TerrainEngine
                     InfoPanel.Panel.UpdateInfo(scene);
                     ScaleBar.singleton.CalculatePrefabs(scene);
                     MainMenu.OpenPrimaryMenus(false);
+                    GameState.InTerrain = true;
                     break;
                 case SceneSession.DONE:
                     break;

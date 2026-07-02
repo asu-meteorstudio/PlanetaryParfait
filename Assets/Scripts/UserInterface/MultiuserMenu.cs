@@ -238,6 +238,7 @@ namespace UserInterface
             MainMenu.OpenPrimaryMenus(true);
             MainMenu.Instance.CloseAllMenus();
             ToggleMenu(true);
+            GameState.InTerrain = false;
         }
 
         private void DeSpawnPlayer(string errorType, string errorMessage)
@@ -253,6 +254,7 @@ namespace UserInterface
             MainMenu.OpenPrimaryMenus(true);
             MainMenu.Instance.CloseAllMenus();
             ToggleMenu(true);
+            GameState.InTerrain = false;
             TerrainTools.SetClientUI(false);
             
             // //resets user/join code input fields

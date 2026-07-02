@@ -69,6 +69,7 @@ namespace UserInterface
             
             ToggleMenu(false);
             MainMenu.OpenPrimaryMenus(false);
+            GameState.InTerrain = true;
             datapack.LoadData();
             loadedSampleTerrain = true;
         }
