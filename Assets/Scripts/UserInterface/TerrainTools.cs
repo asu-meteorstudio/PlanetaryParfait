@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
+using Menu = UserInterface.Menu;
 
 namespace UserInterface
 {
@@ -159,6 +160,10 @@ namespace UserInterface
         public override void ToggleMenu(bool active)
         {
             parentObject.SetActive(active);
+            if (GameState.IsVR && UserInterface.SettingsController.hoverMode)
+            {
+                Menu.HoverMenu.Invoke(!active);
+            }
         }
 
         public override void SetListeners()

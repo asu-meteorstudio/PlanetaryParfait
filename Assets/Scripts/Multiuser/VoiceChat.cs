@@ -22,6 +22,13 @@ public class VoiceChat : MonoBehaviour
 
     public async void StartVoiceChatAsync()
     {
+        await UnityServices.InitializeAsync();
+
+        if (!AuthenticationService.Instance.IsSignedIn)
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+        
         await VivoxService.Instance.InitializeAsync();
         LoginAsync();
     }
