@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 using Menu = UserInterface.Menu;
+using XRControls;
 
 namespace UserInterface
 {
@@ -150,7 +151,31 @@ namespace UserInterface
                 resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
                                                 SceneMaterializer.singleton.terrainStartingPosition);
             }
-            
+        }
+
+        void LateUpdate()
+        {
+            if (GameState.IsVR)
+            {
+                XRController xrRig = (XRController)GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(XRController));
+                if (SettingsController.hoverMode)
+                {
+                    Transform playerTrans = xrRig.player.transform.GetChild(0).transform;
+                    terrainLayers.transform.position = playerTrans.position + playerTrans.forward;
+                    terrainLayers.transform.LookAt(playerTrans.position);
+                    terrainLayers.transform.position += playerTrans.right * 0.25f;
+                    terrainLayers.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+                    terrainLayers.transform.localScale = Vector3.one * 3.0f;
+                }
+                else
+                {
+                    Transform controllerTrans = xrRig.leftController.transform;
+                    terrainLayers.transform.position = controllerTrans.position - controllerTrans.right * 0.22f;
+                    terrainLayers.transform.rotation = controllerTrans.rotation;
+                    terrainLayers.transform.Rotate(new Vector3(52.825f, 180.0f, 0.0f));
+                    terrainLayers.transform.localScale = Vector3.one;
+                }
+            }
         }
         
         #endregion

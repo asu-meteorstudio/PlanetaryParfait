@@ -53,7 +53,7 @@ namespace UserInterface
             if (enabled)
             {
                 menu.parent = xrRig.player.transform.GetChild(0).transform;
-                menu.position = menu.parent.position + menu.parent.forward * 1.0f;
+                menu.position = menu.parent.position + menu.parent.forward;
                 menu.LookAt(menu.parent.position);
                 menu.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
                 menu.localScale = Vector3.one * 0.2f;
