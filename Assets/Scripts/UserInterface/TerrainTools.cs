@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
+using Menu = UserInterface.Menu;
+using XRControls;
 
 namespace UserInterface
 {
@@ -81,6 +83,10 @@ namespace UserInterface
 
         // private vars
         private bool m_TutorialOpen;
+
+        private Color perPixelButtonNormalColor;
+        private Color scaleBarButtonNormalColor;
+        private Color layersButtonNormalColor;
         
         #endregion
         
@@ -107,6 +113,10 @@ namespace UserInterface
             terrainMenuButton = GameState.IsVR ? vrTerrains : desktopTerrains;
             resetPosition = GameState.IsVR ? vrReset : desktopReset;
             settingButton = GameState.IsVR ? vrSettings : desktopSettings;
+
+            perPixelButtonNormalColor = perPixelButton.colors.normalColor;
+            scaleBarButtonNormalColor = scaleBarButton.colors.normalColor;
+            layersButtonNormalColor = layersButton.colors.normalColor;
         }
 
         new void Start()
@@ -129,8 +139,43 @@ namespace UserInterface
 
         void Update()
         {
-            resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
-                                               SceneMaterializer.singleton.terrainStartingPosition);
+            if (GameState.InMultiuser)
+            {
+                // shows reset platform button only for host
+                resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
+                                                SceneMaterializer.singleton.terrainStartingPosition &&
+                                                NetworkManager.Singleton.IsHost);
+            }
+            else
+            {
+                resetPosition.gameObject.SetActive(SceneMaterializer.singleton.terrain.transform.position !=
+                                                SceneMaterializer.singleton.terrainStartingPosition);
+            }
+        }
+
+        void LateUpdate()
+        {
+            if (GameState.IsVR)
+            {
+                XRController xrRig = (XRController)GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(XRController));
+                if (SettingsController.hoverMode)
+                {
+                    Transform playerTrans = xrRig.player.transform.GetChild(0).transform;
+                    terrainLayers.transform.position = playerTrans.position + playerTrans.forward;
+                    terrainLayers.transform.LookAt(playerTrans.position);
+                    terrainLayers.transform.position += playerTrans.right * 0.25f;
+                    terrainLayers.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+                    terrainLayers.transform.localScale = Vector3.one * 3.0f;
+                }
+                else
+                {
+                    Transform controllerTrans = xrRig.leftController.transform;
+                    terrainLayers.transform.position = controllerTrans.position - controllerTrans.right * 0.22f;
+                    terrainLayers.transform.rotation = controllerTrans.rotation;
+                    terrainLayers.transform.Rotate(new Vector3(52.825f, 180.0f, 0.0f));
+                    terrainLayers.transform.localScale = Vector3.one;
+                }
+            }
         }
         
         #endregion
@@ -140,6 +185,10 @@ namespace UserInterface
         public override void ToggleMenu(bool active)
         {
             parentObject.SetActive(active);
+            if (GameState.IsVR && UserInterface.SettingsController.hoverMode)
+            {
+                Menu.HoverMenu.Invoke(!active);
+            }
         }
 
         public override void SetListeners()
@@ -172,6 +221,7 @@ namespace UserInterface
                 ToggleMenu(false);
                 MainMenu.OpenPrimaryMenus(true);
                 MultiuserMenu.OpenMenu.Invoke(true);
+                GameState.InTerrain = false;
                 ToggleTab(false);
                 generalTip.text = "";
             });
@@ -213,6 +263,7 @@ namespace UserInterface
                 
                 MainMenu.OpenPrimaryMenus(true);
                 SettingsController.OpenMenu(true);
+                GameState.InTerrain = false;
                 Deselect();  
             });
         }
@@ -223,6 +274,11 @@ namespace UserInterface
         
         private void TogglePerPixelData(bool active)
         {
+            // makes per pixel button highlighted when active
+            ColorBlock perPixelColors = perPixelButton.colors;
+            perPixelColors.normalColor = active ? perPixelButton.colors.highlightedColor : perPixelButtonNormalColor;
+            perPixelButton.colors = perPixelColors;
+
             clearAllPins.gameObject.SetActive(GameState.InMultiuser && NetworkManager.Singleton.IsHost);
             PerPixelDataReader.singleton.readingData = active;
             perPixelPanel.SetActive(active);
@@ -240,6 +296,11 @@ namespace UserInterface
 
         private void ToggleLayersPanel(bool active)
         {
+            // makes layers button highlighted when active
+            ColorBlock layersColors = layersButton.colors;
+            layersColors.normalColor = active ? layersButton.colors.highlightedColor : layersButtonNormalColor;
+            layersButton.colors = layersColors;
+
             terrainLayers.SetActive(active);
 
             if (active) AnalyticsManager.layersTracker = new LayersUsageTracker();
@@ -277,6 +338,11 @@ namespace UserInterface
 
         private void ToggleScaleBar(bool active)
         {
+            // makes scale bar button highlighted when active
+            ColorBlock colors = scaleBarButton.colors;
+            colors.normalColor = active ? scaleBarButton.colors.highlightedColor : scaleBarButtonNormalColor;
+            scaleBarButton.colors = colors;
+
             ScaleBar.singleton.scalebarMode = active;
             scaleBarPanel.SetActive(active);
             colorPickerPanel.SetActive(false);

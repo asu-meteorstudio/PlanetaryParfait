@@ -150,7 +150,6 @@ namespace UserInterface
         /// <param name="scene"></param>
         private void PopulateLayers(JMARSScene scene)
         {
-            GameState.InTerrain = true;
             //destroys old layers
             if (LayersParent.transform.childCount != 0)
             {
@@ -359,6 +358,13 @@ namespace UserInterface
             {
                 buttonClick.Play();
                 exagSlider.value = 1;
+                
+                if (GameState.InMultiuser)
+                {
+                    LayerSync.singleton.SendUnnamedMessage("Exaggeration");
+                    LayerSync.singleton.SendUnnamedMessage(exagSlider.value.ToString());
+                }
+
                 SceneMaterializer.singleton.terrain.transform.localScale = new Vector3(
                     SceneMaterializer.singleton.terrain.transform.localScale.x, 100,
                     SceneMaterializer.singleton.terrain.transform.localScale.z);

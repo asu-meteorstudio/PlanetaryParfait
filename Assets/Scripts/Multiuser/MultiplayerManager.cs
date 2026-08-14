@@ -20,6 +20,7 @@ namespace Multiuser
         public static MultiplayerManager Instance { get; private set; } //Singleton instance
         public string joinCode;
         public string playerName = "";
+        public bool voluntaryDisconnect = false;
 
         public VoiceChat voiceChat;
         [SerializeField] private bool developerMode;
@@ -29,7 +30,7 @@ namespace Multiuser
             Instance = this;
             joinCode = "";
             playerName = "Player" + UnityEngine.Random.Range(10, 99);
-            //voiceChat = FindObjectOfType<VoiceChat>(); // TODO: instantiate on session start, destroy on session end
+            voiceChat = FindObjectOfType<VoiceChat>(); // TODO: instantiate on session start, destroy on session end
         }
         
         /// <summary>
@@ -37,6 +38,7 @@ namespace Multiuser
         /// </summary>
         public async void CreateRelay()
         {
+            voluntaryDisconnect = false;
             PerPixelDataReader.singleton.DisablePins();
             NomenclatureDataReader.singleton.DisablePins();
             LoadingBar.OpenMenu(true);
@@ -87,10 +89,10 @@ namespace Multiuser
 
                 print("RELAY CODE " + joinCode);
 
-                /*if (developerMode)
+                if (developerMode)
                     voiceChat.JoinTestChannelAsync();
                 else 
-                    voiceChat.JoinChannelAsync(joinCode);*/
+                    voiceChat.JoinChannelAsync(joinCode);
             }
             catch (Exception e) //TODO: when (e is RelayServiceException || e is TimeoutException)
             {
@@ -112,7 +114,10 @@ namespace Multiuser
         /// <param name="roomJoinCode"></param>
         public async void JoinRelay(string roomJoinCode)
         {
+            voluntaryDisconnect = false;
             Debug.Log("joining..");
+            PerPixelDataReader.singleton.DisablePins();
+            NomenclatureDataReader.singleton.DisablePins();
             LoadingBar.OpenMenu(true);
             try
             {
@@ -153,10 +158,10 @@ namespace Multiuser
                 TerrainTools.SetRoomCode();
                 MultiuserMenu.SetMultiplayerMenu();
 
-                /*if (developerMode)
+                if (developerMode)
                     voiceChat.JoinTestChannelAsync();
                 else 
-                    voiceChat.JoinChannelAsync(joinCode);*/
+                    voiceChat.JoinChannelAsync(joinCode);
             }
             catch (RelayServiceException e)
             {
@@ -200,13 +205,13 @@ namespace Multiuser
 
         public void LeaveRelay()
         {
-            /*if (developerMode)
+            if (developerMode)
                 voiceChat.LeaveTestChannelAsync();
             else 
-                voiceChat.LeaveChannelAsync(joinCode);*/
+                voiceChat.LeaveChannelAsync(joinCode);
             
+            voluntaryDisconnect = true;
             NetworkManager.Singleton.Shutdown();
         }
     }
-
 }

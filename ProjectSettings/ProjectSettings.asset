@@ -142,7 +142,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 0
-  bundleVersion: 4.1
+  bundleVersion: 4.4
   preloadedAssets:
   - {fileID: 0}
   metroInputSource: 0
@@ -171,7 +171,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 11
   AndroidMinSdkVersion: 30
   AndroidTargetSdkVersion: 32
   AndroidPreferredInstallLocation: 0
@@ -268,7 +268,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -847,7 +847,12 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -862,11 +867,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 931eb1ca-1fa7-4e7e-87bc-789a977a2712
+  cloudProjectId: 062c6fe7-4b8a-4057-91ef-37c613a56b15
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: JMARS XR
-  organizationId: meteorstudio
+  projectName: Planetary Parfait
+  organizationId: dodorice
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

@@ -2071,7 +2071,8 @@ MonoBehaviour:
         byte0123: 0
         byte0124: 0
         byte0125: 0
-  _localPlayer: {fileID: 0}
+  localMesh: {fileID: 0}
+  usernameText: {fileID: 0}
 --- !u!1 &6813683277006497479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,8 +2085,8 @@ GameObject:
   - component: {fileID: 226566118011069959}
   - component: {fileID: 6633050027616065019}
   - component: {fileID: 2681659688948109697}
-  - component: {fileID: 7302481340698314025}
   - component: {fileID: 719182570526273352}
+  - component: {fileID: 7302481340698314025}
   - component: {fileID: 2151070857811589461}
   - component: {fileID: 3610089390508268886}
   m_Layer: 3
@@ -2164,6 +2165,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1261688150632198479}
+--- !u!114 &719182570526273352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6813683277006497479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2230145929
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &7302481340698314025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,25 +2201,6 @@ MonoBehaviour:
   networkTag: desktop_rig
   localTransform: {fileID: 0}
   localPlayer: {fileID: 0}
---- !u!114 &719182570526273352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6813683277006497479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &2151070857811589461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2210,6 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
@@ -2458,6 +2462,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0

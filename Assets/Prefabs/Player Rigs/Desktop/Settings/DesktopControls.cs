@@ -118,6 +118,15 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Wave"",
+                    ""type"": ""Button"",
+                    ""id"": ""5d083a58-c395-4e3f-8598-7a5c53680168"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Rotate Anchor Toggle"",
                     ""type"": ""Button"",
                     ""id"": ""be0dcf07-65ea-4bdc-a46f-556e62be54a0"",
@@ -515,6 +524,17 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1ec0403-648d-4749-8a8b-f801eef944e4"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wave"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -533,6 +553,7 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_ToggleMode = m_Player.FindAction("ToggleMode", throwIfNotFound: true);
+        m_Player_Wave = m_Player.FindAction("Wave", throwIfNotFound: true);
         m_Player_RotateAnchorToggle = m_Player.FindAction("Rotate Anchor Toggle", throwIfNotFound: true);
         m_Player_MovePlatform = m_Player.FindAction("Move Platform", throwIfNotFound: true);
         m_Player_ToggleMenu = m_Player.FindAction("ToggleMenu", throwIfNotFound: true);
@@ -609,6 +630,7 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_ToggleMode;
+    private readonly InputAction m_Player_Wave;
     private readonly InputAction m_Player_RotateAnchorToggle;
     private readonly InputAction m_Player_MovePlatform;
     private readonly InputAction m_Player_ToggleMenu;
@@ -628,6 +650,7 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @ToggleMode => m_Wrapper.m_Player_ToggleMode;
+        public InputAction @Wave => m_Wrapper.m_Player_Wave;
         public InputAction @RotateAnchorToggle => m_Wrapper.m_Player_RotateAnchorToggle;
         public InputAction @MovePlatform => m_Wrapper.m_Player_MovePlatform;
         public InputAction @ToggleMenu => m_Wrapper.m_Player_ToggleMenu;
@@ -672,6 +695,9 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
             @ToggleMode.started += instance.OnToggleMode;
             @ToggleMode.performed += instance.OnToggleMode;
             @ToggleMode.canceled += instance.OnToggleMode;
+            @Wave.started += instance.OnWave;
+            @Wave.performed += instance.OnWave;
+            @Wave.canceled += instance.OnWave;
             @RotateAnchorToggle.started += instance.OnRotateAnchorToggle;
             @RotateAnchorToggle.performed += instance.OnRotateAnchorToggle;
             @RotateAnchorToggle.canceled += instance.OnRotateAnchorToggle;
@@ -721,6 +747,9 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
             @ToggleMode.started -= instance.OnToggleMode;
             @ToggleMode.performed -= instance.OnToggleMode;
             @ToggleMode.canceled -= instance.OnToggleMode;
+            @Wave.started -= instance.OnWave;
+            @Wave.performed -= instance.OnWave;
+            @Wave.canceled -= instance.OnWave;
             @RotateAnchorToggle.started -= instance.OnRotateAnchorToggle;
             @RotateAnchorToggle.performed -= instance.OnRotateAnchorToggle;
             @RotateAnchorToggle.canceled -= instance.OnRotateAnchorToggle;
@@ -765,6 +794,7 @@ public partial class @DesktopControls: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnToggleMode(InputAction.CallbackContext context);
+        void OnWave(InputAction.CallbackContext context);
         void OnRotateAnchorToggle(InputAction.CallbackContext context);
         void OnMovePlatform(InputAction.CallbackContext context);
         void OnToggleMenu(InputAction.CallbackContext context);
