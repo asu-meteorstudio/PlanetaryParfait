@@ -491,15 +491,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7359205860212032560}
+  mainCamera: {fileID: 0}
   terrainTiles: {fileID: 0}
   leftController: {fileID: 0}
   rightController: {fileID: 0}
   buttonHints: {fileID: 0}
   platformButtonHints: {fileID: 0}
+  walkButtonHint: {fileID: 0}
   hovering: 0
   joystickActive: 0
   triggerActive: 0
-  leftHandActive: 0
+  rightHandActive: 0
   leftGripActive: 0
   rightGripActive: 0
   xActive: 0
@@ -824,6 +826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHand Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 4988354738206971692, guid: 36a51bd584fade34abca7b4bf27fad5a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4988354738206971694, guid: 36a51bd584fade34abca7b4bf27fad5a,
         type: 3}
       propertyPath: m_RootOrder
@@ -909,6 +916,11 @@ PrefabInstance:
       propertyPath: m_VerticalAlignment
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 6880099606523209842, guid: 36a51bd584fade34abca7b4bf27fad5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7913789801794809778, guid: 36a51bd584fade34abca7b4bf27fad5a,
         type: 3}
       propertyPath: m_Name
@@ -988,6 +1000,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Layers Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853484426357940229, guid: e115d6e0d62e51540a774e890dc4297b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853484426357940229, guid: e115d6e0d62e51540a774e890dc4297b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4853484426357940230, guid: e115d6e0d62e51540a774e890dc4297b,
         type: 3}

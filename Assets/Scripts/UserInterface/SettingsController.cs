@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using Slider = UnityEngine.UI.Slider;
 using Toggle = UnityEngine.UI.Toggle;
 using XRController = XRControls.XRController;
+using Menu = UserInterface.Menu;
 
 namespace UserInterface{
 
@@ -15,7 +16,9 @@ namespace UserInterface{
         public static ToggleDelegate OpenMenu;
         public delegate float SettingsDelegate();
         public static SettingsDelegate PlatformSpeed { get; private set; }
-        public static SettingsDelegate MouseSensitivity { get; private set;  }
+        public static SettingsDelegate MouseSensitivity { get; private set; }
+        public static ToggleDelegate HoverMode { get; private set; }
+        public static bool hoverMode;
 
         [SerializeField] private GameObject xrRig;
         
@@ -25,6 +28,7 @@ namespace UserInterface{
 
         [Header("GameObjects")] 
         public GameObject safeModeSettings; // TODO: safe mode for desktop?
+        public GameObject hoverMenuSettings;
         public Slider platformSlider;
         public GameObject rotateSlider;
         public GameObject mouseSlider;
@@ -55,13 +59,17 @@ namespace UserInterface{
 
         public override void SetListeners()
         {
-            var safeToggle = parentObject.GetComponentInChildren<Toggle>();
+            var toggles = parentObject.GetComponentsInChildren<Toggle>();
 
             if (GameState.IsVR) // put into toggle listener
             {
-                safeToggle.gameObject.SetActive(true);
-                safeToggle.isOn = false;
-                safeToggle.onValueChanged.AddListener(SafeMode);
+                toggles[0].gameObject.SetActive(true);
+                toggles[0].isOn = true;
+                toggles[0].onValueChanged.AddListener(SafeMode);
+
+                toggles[1].gameObject.SetActive(true);
+                toggles[1].isOn = false;
+                toggles[1].onValueChanged.AddListener(HoveringMenu);
                 
                 rotateSlider.gameObject.SetActive(true);
                 rotateSlider.GetComponentInChildren<Slider>().onValueChanged.AddListener(SetVRRotateSpeed);
@@ -70,7 +78,8 @@ namespace UserInterface{
             }
             else
             {
-                safeToggle.gameObject.SetActive(false);
+                toggles[0].gameObject.SetActive(false);
+                toggles[1].gameObject.SetActive(false);
                 rotateSlider.gameObject.SetActive(false);
                 
                 mouseSlider.gameObject.SetActive(true);
@@ -85,6 +94,7 @@ namespace UserInterface{
                 ToggleMenu(false);
                 MainMenu.OpenPrimaryMenus(false);
                 TerrainTools.OpenMenu(true);
+                GameState.InTerrain = true;
             });
         }
         
@@ -92,11 +102,13 @@ namespace UserInterface{
         {
             vrPlayer.GetComponent<ContinuousTurnProviderBase>().turnSpeed = 50f;
 
-            // continuous turn is on by default
             if (GameState.IsVR)
             {
-                xrRig.GetComponent<SnapTurnProviderBase>().enabled = false;
-                xrRig.GetComponent<ContinuousTurnProviderBase>().enabled = true;
+                // continuous turn is off by default
+                xrRig.GetComponent<SnapTurnProviderBase>().enabled = true;
+                xrRig.GetComponent<ContinuousTurnProviderBase>().enabled = false;
+
+                hoverMode = false;
             }
         }
 
@@ -110,6 +122,16 @@ namespace UserInterface{
             xrRig.GetComponent<ContinuousTurnProviderBase>().enabled = !isOn;
             
             // TODO: write code to prevent user from going below the terrain when safe mode is on
+        }
+
+        /// <summary>
+        /// If enabled, primary menus will hover in front of VR camera. If disabled, all menus will be connected to the left controller.
+        /// </summary>
+        /// <param name="isOn"></param>
+        private void HoveringMenu(bool isOn)
+        {
+            Menu.HoverMenu.Invoke(isOn);
+            hoverMode = isOn;
         }
 
         #region GettersAndSetters

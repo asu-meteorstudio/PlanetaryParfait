@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UserInterface;
+using Unity.Netcode;
 
 namespace UserInterface
 {
@@ -43,11 +44,13 @@ namespace UserInterface
             // session starts on main menu
             TogglePrimaryMenu(true);
             ToggleMenu(true);
+            GameState.InTerrain = false;
         }
         
         public override void ToggleMenu(bool active)
         {
-            multiuserButton.gameObject.SetActive(!GameState.InMultiuser);
+            customTerrainButton.gameObject.SetActive(!GameState.InMultiuser || NetworkManager.Singleton.IsHost);
+            sampleTerrainButton.gameObject.SetActive(!GameState.InMultiuser || NetworkManager.Singleton.IsHost);
             parentObject.SetActive(active);
             GameState.InTerrain = false;
         }

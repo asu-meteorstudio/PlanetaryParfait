@@ -177,6 +177,8 @@ namespace TerrainEngine.Tools
         {
             menuText.text = "Scalebar Size: " + bars[index].realWorldHeight + " " +
                             SceneDownloader.singleton.scene.units;
+            obj.GetComponentInChildren<TextMeshPro>().text = bars[index].realWorldHeight + " " +
+                                                            SceneDownloader.singleton.scene.units;
             /*bars[index].label = bars[index].realWorldHeight + " " + SceneDownloader.singleton.scene.units;
             text.text = bars[index].label;*/
         }

@@ -71,7 +71,7 @@ namespace Multiuser
             Debug.Log($"client {clientID} has disconnected");
             
             //if host disconnects, or if client network connection is lost, then disconnect client & return to main menu
-            if (!NetworkManager.Singleton.IsHost) //despawns client that has connection issues
+            if (!NetworkManager.Singleton.IsHost && !MultiplayerManager.Instance.voluntaryDisconnect) //despawns client that has connection issues
             {
                 MultiuserMenu.TextMessage("Connection Error",
                     "Unable to maintain connection with the Relay Server. Return to singleuser and try again.");

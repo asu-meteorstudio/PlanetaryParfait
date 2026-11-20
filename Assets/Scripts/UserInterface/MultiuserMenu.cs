@@ -87,8 +87,8 @@ namespace UserInterface
                     MainMenu.OpenMenu(true);
                     
                     //resets username / room code
-                    Login.username = ""; 
-                    Login.password = "";
+                    // Login.username = ""; 
+                    // Login.password = "";
                 }
                 else
                 {
@@ -235,9 +235,10 @@ namespace UserInterface
             parentObject = errorMenu; //sets parent menu to error menu
             errorHeader.text = errorType;
             errorText.text = errorMessage;
-            
             MainMenu.OpenPrimaryMenus(true);
+            MainMenu.Instance.CloseAllMenus();
             ToggleMenu(true);
+            GameState.InTerrain = false;
         }
 
         private void DeSpawnPlayer(string errorType, string errorMessage)
@@ -251,12 +252,14 @@ namespace UserInterface
             errorText.text = errorMessage;
             
             MainMenu.OpenPrimaryMenus(true);
+            MainMenu.Instance.CloseAllMenus();
             ToggleMenu(true);
+            GameState.InTerrain = false;
             TerrainTools.SetClientUI(false);
             
-            //resets user/join code input fields
-            Login.username = "";
-            Login.password = "";
+            // //resets user/join code input fields
+            // Login.username = "";
+            // Login.password = "";
         }
 
         private void InMultiuserMenu()

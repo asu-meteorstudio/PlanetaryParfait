@@ -360,7 +360,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1.135, y: 0.0869}
-  m_SizeDelta: {x: 3.2484, y: 0.8695}
+  m_SizeDelta: {x: 4.58, y: 0.8695}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &77765872658536323
 CanvasRenderer:
@@ -873,10 +873,10 @@ GameObject:
   - component: {fileID: 7555362173343009423}
   - component: {fileID: 5603985375349438460}
   - component: {fileID: 4612703916537199544}
+  - component: {fileID: 1888370934686899167}
   - component: {fileID: 6170800512551653135}
   - component: {fileID: 2931086374470027328}
   - component: {fileID: 4051812508190473966}
-  - component: {fileID: 1888370934686899167}
   - component: {fileID: -2333985599484713578}
   - component: {fileID: 5965985483909232483}
   - component: {fileID: 2722556102209315741}
@@ -925,6 +925,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -951,7 +952,28 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
+--- !u!114 &1888370934686899167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878832857749783231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2908569755
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 1
+  AutoObjectParentSync: 1
 --- !u!114 &6170800512551653135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,7 +986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b6cd033650eb14fbe763eebbe0bae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pin: {fileID: 350336313315976978, guid: 7a61ea37fe6fc4944890d8b5e0b9f458, type: 3}
+  networkPosition:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  pin: {fileID: 0}
   panel: {fileID: 3878832857749783231}
   pinNumber: {fileID: 5726428996078023321}
   pinData: {fileID: 3949918286906324030}
@@ -1011,25 +1035,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1888370934686899167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3878832857749783231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  DontDestroyWithOwner: 1
-  AutoObjectParentSync: 1
 --- !u!114 &-2333985599484713578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,9 +1047,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
+  UseUnreliableDeltas: 0
+  SyncPositionX: 0
+  SyncPositionY: 0
+  SyncPositionZ: 0
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
@@ -1736,7 +1742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3, y: -1}
+  m_AnchoredPosition: {x: 3, y: -1.185}
   m_SizeDelta: {x: 6, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2348751747906578549

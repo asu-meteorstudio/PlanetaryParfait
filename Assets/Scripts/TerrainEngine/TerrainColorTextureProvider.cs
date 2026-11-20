@@ -20,9 +20,10 @@ namespace TerrainEngine
             DontDestroyOnLoad(this);
             singleton = this;
     
-            resolution = new Vector2Int(200, 200);
-            texture = new RenderTexture(200, 200, 16);
+            resolution = new Vector2Int(256, 256);
+            texture = new RenderTexture(256, 256, 16);
             texture.filterMode = FilterMode.Point;
+            texture.useMipMap = true;
             quads = new List<GameObject>();
             cam = gameObject.AddComponent<Camera>();
             cam.transform.position = Vector3.zero;
@@ -33,6 +34,7 @@ namespace TerrainEngine
             cam.orthographicSize = .5f;
             cam.aspect = 1;
             cam.cullingMask = 1 << LayerMask.NameToLayer("TerrainMask");
+            cam.stereoTargetEye = StereoTargetEyeMask.None;
             cam.targetTexture = texture;
         }
     
@@ -126,6 +128,7 @@ namespace TerrainEngine
                 resolution = new Vector2Int(width, height);
                 texture = new RenderTexture(width, height, 16);
                 texture.filterMode = FilterMode.Point;
+                texture.useMipMap = true;
                 cam.targetTexture = texture;
             }
         }

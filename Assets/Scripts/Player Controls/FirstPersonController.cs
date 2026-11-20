@@ -104,6 +104,7 @@ namespace XRControls{
         public bool jump;
         private bool rotateAnchor;
         private Vector2 anchorRotation;
+        public bool waving;
 
         //platform movement (controlled by player)
         [Header("Platform GameObject")]
@@ -148,12 +149,32 @@ namespace XRControls{
             }
             if (cursorLocked)
             {
-                if(movePlatform) MovePlatform();
+                if(movePlatform) 
+                {
+                    MovePlatform();
+
+                    // stops animations from playing while platform is moving
+                    _animationBlend = Mathf.Lerp(_animationBlend, 0f, Time.deltaTime * SpeedChangeRate);
+                    if (_hasAnimator) 
+                    {
+                        _animator.SetFloat(_animIDSpeed, _animationBlend);
+                        _animator.SetFloat(_animIDMotionSpeed, 1f);
+                    }
+                }
                 else Move();
-                
-                // why is this here?
-                /*_animator.SetFloat(_animIDSpeed, 0);
-                _animator.SetFloat(_animIDMotionSpeed, 0);*/
+            }
+            else
+            {
+                // reset move vector to 0 if player presses tab or opens menu to prevent movement upon returning from tools/menu
+                move = Vector3.zero;
+
+                // stops animations from playing while tab is pressed
+                _animationBlend = Mathf.Lerp(_animationBlend, 0f, Time.deltaTime * SpeedChangeRate);
+                if (_hasAnimator) 
+                {
+                    _animator.SetFloat(_animIDSpeed, _animationBlend);
+                    _animator.SetFloat(_animIDMotionSpeed, 1f);
+                }
             }
         }
 
@@ -228,7 +249,8 @@ namespace XRControls{
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
-            if (move == Vector3.zero) targetSpeed = 0.0f;
+            Vector3 horizontalMove = new Vector3(move.x, move.y, 0f);
+            if (horizontalMove == Vector3.zero) targetSpeed = 0.0f;
 
             // a reference to the players current horizontal velocity
             var currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -322,7 +344,34 @@ namespace XRControls{
         {
             return _speed;
         }
-    
+
+        public IEnumerator Wave(Animator animator)
+        {
+            waving = true;
+            float blendTime = 0.3f;
+            float elapsedTime = 0;
+            animator.Play("Wave", 1);
+            while (elapsedTime <= blendTime)
+            {
+                animator.SetLayerWeight(1, Mathf.Lerp(0f, 1f, elapsedTime / blendTime));
+                elapsedTime += (float)Time.deltaTime;
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1.2f);
+
+            elapsedTime = 0;
+            while (elapsedTime <= blendTime)
+            {
+                animator.SetLayerWeight(1, Mathf.Lerp(1f, 0f, elapsedTime / blendTime));
+                elapsedTime += (float)Time.deltaTime;
+                yield return null;
+            }
+            animator.Play("Empty", 1);
+            waving = false;
+
+            yield break;
+        }    
 
         #endregion
 
@@ -348,6 +397,14 @@ namespace XRControls{
         public void OnSprint(InputAction.CallbackContext context) { sprint = context.ReadValueAsButton(); }
 
         public void OnJump(InputAction.CallbackContext context) { jump = context.ReadValueAsButton(); }
+
+        public void OnWave(InputAction.CallbackContext context)
+        {
+            if (context.performed && cursorLocked && !waving)
+            {
+                StartCoroutine(Wave(_animator));
+            }
+        }
 
         public void OnToggleMode(InputAction.CallbackContext context) {
             // This would lock the players movement if they pressed the F key.
