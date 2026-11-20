@@ -61,6 +61,19 @@ references:
   commentId: F:Multiuser.Follower.networkTag
   fullName: Multiuser.Follower.networkTag
   nameWithType: Follower.networkTag
+- uid: Multiuser.Follower.Wave(Animator)
+  name: Wave(Animator)
+  href: api/Multiuser.Follower.html#Multiuser_Follower_Wave_Animator_
+  commentId: M:Multiuser.Follower.Wave(Animator)
+  fullName: Multiuser.Follower.Wave(Animator)
+  nameWithType: Follower.Wave(Animator)
+- uid: Multiuser.Follower.Wave*
+  name: Wave
+  href: api/Multiuser.Follower.html#Multiuser_Follower_Wave_
+  commentId: Overload:Multiuser.Follower.Wave
+  isSpec: "True"
+  fullName: Multiuser.Follower.Wave
+  nameWithType: Follower.Wave
 - uid: Multiuser.Leader
   name: Leader
   href: api/Multiuser.Leader.html
@@ -155,6 +168,12 @@ references:
   commentId: F:Multiuser.MultiplayerManager.voiceChat
   fullName: Multiuser.MultiplayerManager.voiceChat
   nameWithType: MultiplayerManager.voiceChat
+- uid: Multiuser.MultiplayerManager.voluntaryDisconnect
+  name: voluntaryDisconnect
+  href: api/Multiuser.MultiplayerManager.html#Multiuser_MultiplayerManager_voluntaryDisconnect
+  commentId: F:Multiuser.MultiplayerManager.voluntaryDisconnect
+  fullName: Multiuser.MultiplayerManager.voluntaryDisconnect
+  nameWithType: MultiplayerManager.voluntaryDisconnect
 - uid: Multiuser.Sync
   name: Multiuser.Sync
   href: api/Multiuser.Sync.html
@@ -1913,12 +1932,31 @@ references:
   commentId: F:TerrainEngine.Tools.Pin.guid
   fullName: TerrainEngine.Tools.Pin.guid
   nameWithType: Pin.guid
+- uid: TerrainEngine.Tools.Pin.networkPosition
+  name: networkPosition
+  href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_networkPosition
+  commentId: F:TerrainEngine.Tools.Pin.networkPosition
+  fullName: TerrainEngine.Tools.Pin.networkPosition
+  nameWithType: Pin.networkPosition
 - uid: TerrainEngine.Tools.Pin.number
   name: number
   href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_number
   commentId: F:TerrainEngine.Tools.Pin.number
   fullName: TerrainEngine.Tools.Pin.number
   nameWithType: Pin.number
+- uid: TerrainEngine.Tools.Pin.OnNetworkSpawn
+  name: OnNetworkSpawn()
+  href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_OnNetworkSpawn
+  commentId: M:TerrainEngine.Tools.Pin.OnNetworkSpawn
+  fullName: TerrainEngine.Tools.Pin.OnNetworkSpawn()
+  nameWithType: Pin.OnNetworkSpawn()
+- uid: TerrainEngine.Tools.Pin.OnNetworkSpawn*
+  name: OnNetworkSpawn
+  href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_OnNetworkSpawn_
+  commentId: Overload:TerrainEngine.Tools.Pin.OnNetworkSpawn
+  isSpec: "True"
+  fullName: TerrainEngine.Tools.Pin.OnNetworkSpawn
+  nameWithType: Pin.OnNetworkSpawn
 - uid: TerrainEngine.Tools.Pin.panel
   name: panel
   href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_panel
@@ -1937,6 +1975,12 @@ references:
   commentId: F:TerrainEngine.Tools.Pin.pinData
   fullName: TerrainEngine.Tools.Pin.pinData
   nameWithType: Pin.pinData
+- uid: TerrainEngine.Tools.Pin.pinNetworkReference
+  name: pinNetworkReference
+  href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_pinNetworkReference
+  commentId: F:TerrainEngine.Tools.Pin.pinNetworkReference
+  fullName: TerrainEngine.Tools.Pin.pinNetworkReference
+  nameWithType: Pin.pinNetworkReference
 - uid: TerrainEngine.Tools.Pin.pinNumber
   name: pinNumber
   href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_pinNumber
@@ -1949,6 +1993,19 @@ references:
   commentId: F:TerrainEngine.Tools.Pin.position
   fullName: TerrainEngine.Tools.Pin.position
   nameWithType: Pin.position
+- uid: TerrainEngine.Tools.Pin.WaitForNetworkReference
+  name: WaitForNetworkReference()
+  href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_WaitForNetworkReference
+  commentId: M:TerrainEngine.Tools.Pin.WaitForNetworkReference
+  fullName: TerrainEngine.Tools.Pin.WaitForNetworkReference()
+  nameWithType: Pin.WaitForNetworkReference()
+- uid: TerrainEngine.Tools.Pin.WaitForNetworkReference*
+  name: WaitForNetworkReference
+  href: api/TerrainEngine.Tools.Pin.html#TerrainEngine_Tools_Pin_WaitForNetworkReference_
+  commentId: Overload:TerrainEngine.Tools.Pin.WaitForNetworkReference
+  isSpec: "True"
+  fullName: TerrainEngine.Tools.Pin.WaitForNetworkReference
+  nameWithType: Pin.WaitForNetworkReference
 - uid: TerrainEngine.Tools.PinInfo
   name: PinInfo
   href: api/TerrainEngine.Tools.PinInfo.html
@@ -2874,6 +2931,19 @@ references:
   commentId: T:UserInterface.Menu
   fullName: UserInterface.Menu
   nameWithType: Menu
+- uid: UserInterface.Menu.HoverMenu
+  name: HoverMenu
+  href: api/UserInterface.Menu.html#UserInterface_Menu_HoverMenu
+  commentId: P:UserInterface.Menu.HoverMenu
+  fullName: UserInterface.Menu.HoverMenu
+  nameWithType: Menu.HoverMenu
+- uid: UserInterface.Menu.HoverMenu*
+  name: HoverMenu
+  href: api/UserInterface.Menu.html#UserInterface_Menu_HoverMenu_
+  commentId: Overload:UserInterface.Menu.HoverMenu
+  isSpec: "True"
+  fullName: UserInterface.Menu.HoverMenu
+  nameWithType: Menu.HoverMenu
 - uid: UserInterface.Menu.LockCursor
   name: LockCursor
   href: api/UserInterface.Menu.html#UserInterface_Menu_LockCursor
@@ -2887,6 +2957,12 @@ references:
   isSpec: "True"
   fullName: UserInterface.Menu.LockCursor
   nameWithType: Menu.LockCursor
+- uid: UserInterface.Menu.menu
+  name: menu
+  href: api/UserInterface.Menu.html#UserInterface_Menu_menu
+  commentId: F:UserInterface.Menu.menu
+  fullName: UserInterface.Menu.menu
+  nameWithType: Menu.menu
 - uid: UserInterface.Menu.MenuDelegate
   name: Menu.MenuDelegate
   href: api/UserInterface.Menu.MenuDelegate.html
@@ -2949,6 +3025,19 @@ references:
   commentId: T:UserInterface.Menu.ToggleDelegate
   fullName: UserInterface.Menu.ToggleDelegate
   nameWithType: Menu.ToggleDelegate
+- uid: UserInterface.Menu.ToggleHoveringMenu(System.Boolean)
+  name: ToggleHoveringMenu(Boolean)
+  href: api/UserInterface.Menu.html#UserInterface_Menu_ToggleHoveringMenu_System_Boolean_
+  commentId: M:UserInterface.Menu.ToggleHoveringMenu(System.Boolean)
+  fullName: UserInterface.Menu.ToggleHoveringMenu(System.Boolean)
+  nameWithType: Menu.ToggleHoveringMenu(Boolean)
+- uid: UserInterface.Menu.ToggleHoveringMenu*
+  name: ToggleHoveringMenu
+  href: api/UserInterface.Menu.html#UserInterface_Menu_ToggleHoveringMenu_
+  commentId: Overload:UserInterface.Menu.ToggleHoveringMenu
+  isSpec: "True"
+  fullName: UserInterface.Menu.ToggleHoveringMenu
+  nameWithType: Menu.ToggleHoveringMenu
 - uid: UserInterface.Menu.ToggleMenu(System.Boolean)
   name: ToggleMenu(Boolean)
   href: api/UserInterface.Menu.html#UserInterface_Menu_ToggleMenu_System_Boolean_
@@ -3296,6 +3385,31 @@ references:
   commentId: F:UserInterface.SettingsController.exitButton
   fullName: UserInterface.SettingsController.exitButton
   nameWithType: SettingsController.exitButton
+- uid: UserInterface.SettingsController.hoverMenuSettings
+  name: hoverMenuSettings
+  href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_hoverMenuSettings
+  commentId: F:UserInterface.SettingsController.hoverMenuSettings
+  fullName: UserInterface.SettingsController.hoverMenuSettings
+  nameWithType: SettingsController.hoverMenuSettings
+- uid: UserInterface.SettingsController.hoverMode
+  name: hoverMode
+  href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_hoverMode
+  commentId: F:UserInterface.SettingsController.hoverMode
+  fullName: UserInterface.SettingsController.hoverMode
+  nameWithType: SettingsController.hoverMode
+- uid: UserInterface.SettingsController.HoverMode
+  name: HoverMode
+  href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_HoverMode
+  commentId: P:UserInterface.SettingsController.HoverMode
+  fullName: UserInterface.SettingsController.HoverMode
+  nameWithType: SettingsController.HoverMode
+- uid: UserInterface.SettingsController.HoverMode*
+  name: HoverMode
+  href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_HoverMode_
+  commentId: Overload:UserInterface.SettingsController.HoverMode
+  isSpec: "True"
+  fullName: UserInterface.SettingsController.HoverMode
+  nameWithType: SettingsController.HoverMode
 - uid: UserInterface.SettingsController.mouseSen
   name: mouseSen
   href: api/UserInterface.SettingsController.html#UserInterface_SettingsController_mouseSen
@@ -4237,6 +4351,19 @@ references:
   isSpec: "True"
   fullName: XRControls.FirstPersonController.OnTranslateAnchor
   nameWithType: FirstPersonController.OnTranslateAnchor
+- uid: XRControls.FirstPersonController.OnWave(InputAction.CallbackContext)
+  name: OnWave(InputAction.CallbackContext)
+  href: api/XRControls.FirstPersonController.html#XRControls_FirstPersonController_OnWave_InputAction_CallbackContext_
+  commentId: M:XRControls.FirstPersonController.OnWave(InputAction.CallbackContext)
+  fullName: XRControls.FirstPersonController.OnWave(InputAction.CallbackContext)
+  nameWithType: FirstPersonController.OnWave(InputAction.CallbackContext)
+- uid: XRControls.FirstPersonController.OnWave*
+  name: OnWave
+  href: api/XRControls.FirstPersonController.html#XRControls_FirstPersonController_OnWave_
+  commentId: Overload:XRControls.FirstPersonController.OnWave
+  isSpec: "True"
+  fullName: XRControls.FirstPersonController.OnWave
+  nameWithType: FirstPersonController.OnWave
 - uid: XRControls.FirstPersonController.RotationSpeed
   name: RotationSpeed
   href: api/XRControls.FirstPersonController.html#XRControls_FirstPersonController_RotationSpeed
@@ -4274,6 +4401,25 @@ references:
   commentId: F:XRControls.FirstPersonController.TopClamp
   fullName: XRControls.FirstPersonController.TopClamp
   nameWithType: FirstPersonController.TopClamp
+- uid: XRControls.FirstPersonController.Wave(Animator)
+  name: Wave(Animator)
+  href: api/XRControls.FirstPersonController.html#XRControls_FirstPersonController_Wave_Animator_
+  commentId: M:XRControls.FirstPersonController.Wave(Animator)
+  fullName: XRControls.FirstPersonController.Wave(Animator)
+  nameWithType: FirstPersonController.Wave(Animator)
+- uid: XRControls.FirstPersonController.Wave*
+  name: Wave
+  href: api/XRControls.FirstPersonController.html#XRControls_FirstPersonController_Wave_
+  commentId: Overload:XRControls.FirstPersonController.Wave
+  isSpec: "True"
+  fullName: XRControls.FirstPersonController.Wave
+  nameWithType: FirstPersonController.Wave
+- uid: XRControls.FirstPersonController.waving
+  name: waving
+  href: api/XRControls.FirstPersonController.html#XRControls_FirstPersonController_waving
+  commentId: F:XRControls.FirstPersonController.waving
+  fullName: XRControls.FirstPersonController.waving
+  nameWithType: FirstPersonController.waving
 - uid: XRControls.XRController
   name: XRController
   href: api/XRControls.XRController.html
